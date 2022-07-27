@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_width_height</title>
+
+<style>
+/* div {
+
+width: auto;
+height: 10px;
+background: tomato;
+
+} */
+/* div는 너비랑 높이랑 설정이 되어야 출력이된다 */
+span {
+    /*인라인 요소는 가로, 세로 너비를 가질 수 없다 
+    그럼 컨텐츠로 결정된다*/
+    width: auto;
+    height: auto;
+    background-color: tan;
+
+
+}
+
+.parent {
+    width: 100px;
+    height: 200px;
+    border: 3px solid teal;
+
+}
+
+.child {
+
+    max-width: 500px;
+    min-width: 100px;
+    
+    height: 100;
+    background: midnightblue;
+}
+
+
+</style>
+
+
+
+
+</head>
+
+
+<body>
+    <!-- 블록/인라인 요소 기본값 -->
+    <div>
+
+    </div>
+
+
+    <span>
+        content
+    </span>
+
+    <hr/>
+
+<!--max /min -->
+
+<div class="parent">
+
+    <div class="child">
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step04_font.html</title>
+</head>
+
+<style>
+/*font - weight 400(default) ~ 900 */
+
+p{
+    font-weight: bold;
+}
+/*font size 는 단위가 존재 : px(16px가 default) . cm, em ,
+% 등이 있따*/
+
+div {
+    font-size: 16%;
+}
+
+/*font-family*/
+
+.serif {
+ 
+    font-family: serif;
+}
+.monospace {
+    font-family: monospace;
+
+}
+
+/*font-size */
+
+/*
+    1. 절대적 크기 : px , cm , ...
+    2. 상대적 크기 : %, em ,rem , ...
+
+*/
+html {
+    font-size: 10px;
+}
+
+body * {
+
+    border: 2px solid;
+}
+
+.container {
+
+     width: 200px;
+     font-size: 10px;
+}
+
+.parent {
+
+    width: 100px;
+
+    /* % 부모요소로 영향을 받음*/
+    width :50%;
+
+    /* em 부모를 기준으로 font-size 10px 상속받은것과 같은 */
+
+    width: 10em;
+    font-size: 1em;
+
+    /* em 은 부모의 폰트사이즈를 상속 받으니 여기서 1em은 10px이다
+    그럼 width 100px 이다  또한 em 폰트사이즈 기준이라 반듯이
+    본인의 폰트 사이즈가 정의 도이어야 한다 안그럼 적용 x*/
+}
+
+
+
+.child{
+
+    width: 50px;
+    
+    width: 50%;
+
+    width: 5rem;
+    /* 5x 16px (80px) -> 5 X 10px = 50px */
+    /*rem 은 최상위 요소 를 받는다 */
+
+
+}
+
+
+
+.container2{
+
+        height: 50vh;
+
+    /* v:view(viewport), h(height), width: 50vw*/
+
+    
+}
+
+
+</style>
+
+
+
+
+<body>
+    
+<!-- <p>
+ 폰트 두께입니다.
+
+</p>
+
+<div>
+    폰트 사이즈 입니다.
+</div>
+--> 
+
+
+
+<!-- 단위 디테일 -->
+<div class="container">컨테이너
+    <div class="parent">부모
+        <div class="child">자식1</div>
+        <div class="child">자식2</div>
+    </div>
+</div>
+
+<!-- <div class="container2"></div> -->
+
+
+<!--font_faumily : [글꼴 후보 1,2,3,4] 글꼴계열 -->
+
+<!-- serif : 바탕체
+sans-serif : 고딕체
+monospace : 가로폭 동등 고정너비 계열
+cursive : 필기체
+fantasy : 장식 (재미표현) 계열 -->
+
+    <!-- <div class="serif">Hello, CSS</div>
+    <div class="sans-serif">Hello, CSS</div>
+    <div class="monospace">Hello, CSS</div>
+    <div class="cursive">Hello, CSS</div> -->
+
+
+
+
+
+</body>
+</html>

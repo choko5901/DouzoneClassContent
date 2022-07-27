@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step03_selector.html</title>
+</head>
+<style>
+/* p{
+    color: red;
+    text-align: center;
+
+} */
+
+/* #p1 {
+
+    color : blue;
+} */
+
+/* .font40{
+
+    font-size: 40px;
+
+} */
+
+/* .font50{
+    font-size: 50px;
+}
+ */
+
+/* .right {
+    text-align:  right;
+} */
+
+/* h3, h4 {
+
+    color :green ;
+} */
+
+/* 복합 선택자 */
+/* li.berry{
+    color:red;
+} */
+
+
+/* 자식 선택자 */
+/* .fruits li {
+     color : blue;
+} */
+
+/* 인접 형재/자매 선택자 */
+/* .berry + li {
+
+color : gold;
+
+} */
+
+
+/*일반 형재 /자매 선택자 */
+/* .berry ~ li {
+color : green ;
+
+
+} */
+
+/*가상 클래스 선택자 */
+/* 방문하지 않은 링크 */
+
+a:link {
+    background-color: yellow;
+}
+
+/* 방문한 링크 표현 */
+
+a:visited {
+    background-color:  cyan;
+}
+
+
+
+/* 마우스를 링크 위에 올려 둘때 */
+a:hover {background-color: hotpink ;}
+
+a:active {
+
+    background-color: greenyellow;
+}
+
+/*텍스트 입력하는 상태  */
+
+input:focus {
+    background-color: green;
+    
+}
+
+/* :first-child /last-child*/
+/* .fruits li:last-child {
+color: red;
+} */
+/* 맨끝에 p나 다른게 있으면 적용 안됨 */
+
+/*nth-child()*/
+/* .fruits li:nth-child(n+3) {
+    color :red ;
+} */
+
+/* .fruits p:last-child() {
+
+    color: red ;
+} */
+
+/* .fruits p:nth-of-type(1)
+{
+color:  blue;
+
+} */
+
+/*not*/
+/* .fruits li:not(.berry) {
+color : red;
+
+} */
+
+
+/* 가상 요소 선택자 */
+
+/* .before li::before {
+
+    content: "숫자";
+    color: blue;
+} */
+
+/* 속성 선택자 [attr] */
+[class^="btn-"] {
+font-weight: bold;
+
+border-radius: 20px;
+
+}
+
+[class$="success"] {
+
+    color: green;
+}
+
+[class$="danger"] {
+
+color: red;
+}
+
+[type="password"]
+
+
+</style>
+
+
+<body>
+    <h1>Selector</h1>
+<h2>1. 태그 선택자</h2>
+<p>모든 p태그에 스타일이 적용됩니다.</p>
+<p>여기!</p>
+<p>그리고 여기!</p>
+
+<hr>
+
+<h2>2. 아이디 선택자</h2>
+<p id="p1">아이디 지정된 것만 영향을 받습니다.</p>
+<p>이 단락은 아이디 선택자의 영향을 받지 않습니다</p id="p1">
+<p id="p1">이 단락은 아이디 선택자의 영향을 받지 않습니다</p>
+<!-- id 가 중복되게 적용되게 보이지만 중복되게 사용해선 아니됨-->
+<hr>
+
+<h2>3. 클래스 선택자</h2>
+<p>클래스는 여러 요소를 대상으로, 여러 종류를 적용할 수 있습니다.</p>
+<p class="font40">40px 크기의 텍스트</p>
+<p class="font40 font50 right">40px 크기의 텍스트와 오른쪽 정렬</p>
+<!--class 도 클래스로 같은 요소가 적용 되면 제일 마지막에 적용 된게
+적용 된다 그럼 위에 40사이즈와 50사이즈 중 50사이즈에 적용됨
+마지막에 적용된다는건 스타일 시트에서 마지막 에 적힌거지 클래스에 적힌게
+순서가 아니다-->
+
+
+<p class="font50 right">50px 크기의 텍스트와 오른쪽 정렬</p>
+<!-- class는 스타일 시트 상 위에 있을 수록 먼저 적용 (최종적으로는 맨 아래쪽으로 덮임) -->
+
+
+<hr>
+
+<h2>4. 그룹 선택자</h2>
+<h3>그룹 선택자는 여러 요소를</h3>
+<h4>한 번에 선택할 수 있습니다</h4>
+
+
+<div>
+    <ul class="fruits">
+        <li>사과</li>
+        <li class="berry">딸기</li>
+        <li>수박</li>
+        <li>바나나</li>
+        <p>수박</p>
+        <p>수박</p>
+        
+    </ul>
+</div>
+<div>당근</div>
+<p>포도</p>
+<span>수박</span>
+
+
+
+<hr/>
+
+<!--emmet 단축기능 -->
+<!--자식 노드 생성 :  -->
+<!--div>ui>li-->
+<div>
+    <ul>
+        <li></li>
+    </ul>
+</div>
+
+<!--형제/자매 노드 생성 : + -->
+<!-- div+p+span-->
+
+<div></div>
+<p></p>
+<span></span>
+<!-- 횟수만큼 반복 : * -->
+<!--li*3-->
+<li></li>
+<li></li>
+<li></li>
+
+
+<!--div>dl>(dt+dd)*3-->
+<div>
+    <dl>
+        <dt></dt>
+        <dd></dd>
+        <dt></dt>
+        <dd></dd>
+        <dt></dt>
+        <dd></dd>
+    </dl>
+</div>
+
+
+<!--id, class 속성 적용 -->
+<!--div#header>div.nav -->
+
+<div id="header">
+    <div class="nav"></div>
+</div>
+
+<!--넘버링 : $ -->
+
+<!-- ul>li.item$*5-->
+<ul>
+    <li class="item1"></li>
+    <li class="item2"></li>
+    <li class="item3"></li>
+    <li class="item4"></li>
+    <li class="item5"></li>
+</ul>
+<!-- ul>li.item$$*5-->
+
+<ul>
+    <li class="item01"></li>
+    <li class="item02"></li>
+    <li class="item03"></li>
+    <li class="item04"></li>
+</ul>
+
+<!-- 텍스트 : {}-->
+<!--li{내용} -->
+
+<li>내용</li>
+
+<!--li{리스트$}*5 -->
+
+<li>리스트1</li>
+<li>리스트2</li>
+<li>리스트3</li>
+<li>리스트4</li>
+<li>리스트5</li>
+
+
+<hr/>
+
+<!-- 가상 클래스 선택자 -->
+<a href=""> 링크입니다. </a>
+<br/>
+
+<input type="text" placeholder="값을 입력하세요 ">
+
+<hr/>
+
+
+
+<!-- 가상 요소 선택자 -->
+
+<ul class="before">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+</ul>
+
+<hr />
+
+<!--속성  선택자 -->
+
+
+<button class="btn-success">Success</button>
+<button class="btn-danger">Danger</button>
+<button>Normal</button>
+
+</body>
+</html>

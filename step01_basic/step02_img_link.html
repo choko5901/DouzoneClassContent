@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_img_link.html</title>
+</head>
+<body>
+    
+    <!--이미지 : img-->
+    <!--웹페이지에 존재하는 이미지 출력-->
+
+
+    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="구글이미지">
+
+    <br />
+
+    <!--img 폴더내에 존재하는(로컬에 존재하는) 이미지 출력-->
+
+    <img src="/img/DOUZONE_CI_RGB.png" alt="company" width="200px">
+    <br />
+
+    <img src="../img/DOUZONE_CI_RGB.png" alt="company" height="200px" width="400px">
+
+    <br />
+    <!--링크 : link-->
+    <!-- 이미지를 누르면 그 링크로 가는 방법-->
+
+    <a href="http://google.com">
+        <img src="../img/DOUZONE_CI_RGB.png" alt="company" height="200px" width="400px">
+    </a>
+
+<br/>
+
+    <!-- target 속성 사용하기 -->
+    <!-- self 는 그 창에서 바로 이동-->
+    <a href="http://google.com" target="_self">
+        <img src="../img/DOUZONE_CI_RGB.png" alt="company" height="200px" width="400px">
+    </a>
+<br / >
+    <!-- target 속성 사용하기 -->
+    <!-- blank는 새창으로 열기-->
+    <a href="http://google.com" target="_blank">
+        <img src="../img/DOUZONE_CI_RGB.png" alt="company" height="200px" width="400px">
+    </a>
+
+
+
+<a href="/intro.html">
+
+index.html
+
+
+</a>
+
+
+
+
+
+</body>
+</html>
