@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+    .parent{
+
+        width: 500px;
+        height: 400px;
+        border: 3px solid black;
+        /* absoulte 실습시 밑에 코드 사용 */
+        /* position: relative; */
+    }
+
+
+    .child{
+        width: 100px;
+        height: 100px;
+        border: 3px dashed gray;
+        background: red;
+        top: 50px;
+    }
+
+    /* relative */
+
+    .box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        border: 3px dashed gray;
+    }
+    .relative{
+        position: relative;
+        left: 300px;
+
+    }
+
+    .absolute{
+position: absolute;
+top:  50px;
+left: 100px;
+
+    }
+
+.fixed{
+    position: fixed;
+    top: 50px;
+    right: 50px;
+}
+body{
+    height: 2000px ;
+}
+
+
+/* sticky */
+
+.section {
+    height: 300px;
+    border: 3px solid navy;
+
+}
+.section h1 {
+    text-align: center;
+    position: sticky;
+    top: 0;
+
+}
+
+</style>
+
+<body>
+    <!-- position: 요소의 위치 지정의 기준설정 -->
+
+
+
+    <!-- static: 기준없음 / 배치 불가능(기본값)  -->
+<!-- <div class="parent">
+    <div class="child"></div>
+</div> -->
+
+<!-- relative : 요소 자기 자신 기준 -->
+
+<!-- 
+<div class="box">1</div>
+<div class="box relative">2</div>
+<div class="box">3</div> -->
+
+<!-- 절대적인 위치 absolute
+    위치 기준을 부모요소로 잡는다
+    ,단 부모 요소가 static이 아닐때 
+static이면 부모요소를 무시하고 더 큰걸 찾는다 -->
+
+
+<!-- fixed: 고정값  약간 스크롤 내리면서 배너 같은 느낌임
+그 위치에 고정 시키는 코딩이다-->
+
+<!-- <div class="parent">
+<div class="box">1</div>
+<div class="box absolute">2</div>
+<div class="box fixed">3</div>
+</div> -->
+
+
+
+
+<!-- sticky : 스크롤 영역을 기준으로 삼는다
+top 등의 값이 1개이상 존재 및 스크롤 과 맞닿았을때 동작 -->
+
+
+<div class="container">
+    <div class="section">
+        <h1>Title1</h1>
+    </div>
+    <div class="section">
+        <h1>Title2</h1>
+    </div>
+    <div class="section">
+        <h1>Title3</h1>
+    </div>
+    <div class="section">
+        <h1>Title4</h1>
+    </div>
+    <div class="section">
+        <h1>Title5</h1>
+    </div>
+    <div class="section">
+        <h1>Title6</h1>
+    </div>
+</div>
+
+
+</body>
+</html>
