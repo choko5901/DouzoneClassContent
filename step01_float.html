@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+article{}
+
+article .picture{
+
+    width: 100px;
+    height: 100px;
+    background: navy;
+    float: left;
+    margin: 10px;
+
+}
+/* 적용 */
+
+.box{
+    width: 100px;
+    height: 100px;
+    background: gold;
+    margin: 10px;
+    float: left;
+    
+
+}
+
+ul{
+    padding:15px;
+    background: red;
+    /* float: left; */
+    /* overflow: hidden; */
+    /* display: inline-block; */
+}
+
+ul::after {
+    content: '' ;
+    display: block;
+    clear:both;
+        
+}
+
+ul li{
+    float: left;
+    margin: 5px;
+    padding: 5px 10px;
+    list-style: none;
+    background: blue;
+}
+
+</style>
+
+
+</head>
+
+
+<body>
+    <!-- float : 요소를 좌우 방향으로 띄움(수평정렬) -->
+    <!-- 개념 
+        <article>
+        <div class="picture"></div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, assumenda, voluptate repellat quis, maiores pariatur eos illum beatae impedit veritatis adipisci temporibus dignissimos hic officiis nemo quo fugiat quas iusto.
+        Expedita maxime excepturi nesciunt? Harum sunt minima est ipsa dolor explicabo veritatis amet ea debitis error iusto cumque soluta sit, deserunt, aperiam, distinctio at voluptatibus. Fugiat qui officiis quis quidem.
+        Illo incidunt odit sequi necessitatibus officia sint saepe molestias tenetur odio dignissimos minus, natus ducimus atque laboriosam delectus perspiciatis. Natus delectus laudantium enim iste excepturi a consequuntur voluptas deserunt tenetur.
+
+    </article> -->
+
+    <!-- 적용 -->
+    <!-- <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div> -->
+
+    <!-- 문제(띄움 속성 이기떄문에 빈공간 발생시 
+        원치 않은 위치 조정이 일어남) 해결방안-->
+    <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        
+
+    </ul>
+
+    
+    <div>float 문제 해결 방안?</div>
+
+</body>
+</html>
