@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+.container{
+
+width: 300px;
+height: 400px;
+line-height: 400px;
+background: gold;
+text-align: center;
+/*  */
+
+}
+
+.info{
+    background: red;
+    display: inline-block;
+    vertical-align: middle;
+    /* 문제발생 */
+    width: 100%;
+    margin-left: -6px;
+    line-height: normal;
+    /* line-hegiht의 노멀은 부모의 라인 하이트값 을 받거나
+    부모의 라인하이트 값이 없으면 그냥 하이트값을 받는다. 
+    그래서 라인 하이트 값은 부모에 하이트 값있으면 구지 필요없다
+    다만 부모의 하이트 값이 없으면 필요하다*/
+
+}
+.vertical_center{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+</style>
+
+
+
+</head>
+<body>
+    
+<!-- 수평(가운데) 정렬(가로 정렬) -->
+
+<!-- inline -->
+<!-- text-aline: center -->
+
+<!-- block -->
+<!-- margin: 0 auto; -->
+
+<!-- 수직 가운데 정렬(세로 정렬) -->
+
+<div class="container">
+    <div class="vertical_center"></div>
+    <div class="info">
+        <h1>NAME</h1>
+        <p>Fullstack</p>
+    </div>
+</div>
+
+
+
+</body>
+</html>

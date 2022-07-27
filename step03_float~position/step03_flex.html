@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .container{
+            display: flex;
+
+            /* direction */
+            flex-direction: row;
+            border: 2px dashed red;
+            
+            /* wrap */
+            flex-wrap: wrap;
+            /* justify-content */
+            justify-content: center;
+
+            /* align-content */
+            height: 400px;
+            align-content: center;
+
+        }
+        .container .item{
+            
+            width: 100px;
+            height: 100px;
+            border: 2px solid;
+            /* item 글자가 중앙으로 오려면 */
+
+            display:  flex;
+            justify-content: center;
+            align-items: center;
+        }
+/* 아이템과 관련된 내용 */
+
+.item:nth-child(3){
+    font-size: 40px;
+    order: 1;
+    /* 각각의 컨텐츠들의 오더의 디폴트가 0이기 때문에
+    1로 하면 제일 뒤로 밀린다 그래서 순서를 정하고 싶으면
+    나머지 컨텐츠들의 오더를 정해줘야 한다 */
+}
+
+.item1{
+    /* flex-grow:1; */
+    flex-shrink: 1;
+}
+.item2{
+    /* flex-grow: 2; */
+    flex-shrink: 2;
+
+}
+
+/* 가변적인 크기를 갖는 요소에 적용하면 좋다 */
+
+.container .item_basis{
+    height: 100px;
+    background: gold;
+    border: 3px dashed darkblue;
+    flex-grow: 1;
+    flex-basis: 0;
+    /*basis 1은 여백을 기준으로 나누고
+    0은 실제 아이템의 기준으로 1대 1대 1로 공간을 나눈다.  */
+
+}
+
+
+    </style>
+
+</head>
+<body>
+    <!-- flex : 컨테이너인가 아이템이냐 구분 꼭해라-->
+    <!-- 컨테이너 -->
+    <!-- 1. inline-flex vs flex -->
+
+    <div class="container">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item">item5</div>
+        
+    </div>
+
+    <!-- 2. flex-direction -->
+    <!-- 주축, 교차축 -->
+    <!-- row일때 주축은 수평축, 교차축은 수직축 -->
+    <!-- main start(flex- start) / end -->
+    <!--cross start(flex- start) / end -->
+
+    <!-- 3. flex-wrap : 줄넘김 처리 (컨테이너가 아이템을 담을 공간이
+        없을 떄 줄바꿈 방식에 대한 정의) -->
+
+    <!-- no wrao 이 디폴트 값 -->
+    <!-- wrap :여러줄로 하나의 컨테이너로 묶음 -->
+    
+    <!-- 4. justify_content 주축 정렬 방식-->
+
+
+    <!--5. align-content: 수직축 정렬 방식  -->
+
+    <!-- 아이템 -->
+        <!-- 7.order -->
+        <!-- 8. flex grow: 증가 너비 비율 설정
+        , flex shrink 감소 너비 비율 설정 -->
+
+        <div class="container">
+            <div class="item itme1">item1</div>
+            <div class="item item2">item2</div>
+            <div class="item item3">item3</div>
+                    
+        </div>
+
+    <!-- flex basis 공간 배분전 기본 너비 설정 -->
+    <div class="container">
+        <div class="item_basis">item1</div>
+        <div class="item_basis">2</div>
+        <div class="item_basis">item333333333</div>
+    </div>
+
+
+
+</body>
+</html>
