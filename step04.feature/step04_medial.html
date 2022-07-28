@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    @media screen and (min-width: 576px) {
+        body{
+
+            background: green;
+        }
+        div{
+            font-size: 10px;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        body{
+
+            background: gold;
+        }
+        div{
+            font-size: 130px;
+        }
+    }
+    .fa-home{
+        position: relative;
+        top: 50px;
+        color: red;
+        font-size: 3rem;
+    }
+
+
+</style>
+
+
+
+<body>
+    <!-- 어느정도 형태를 유지하면서 화면 크기에 따라 표현하는 걸
+    미디어 라고 한다 -->
+
+    
+    <!-- 1. 모바일 우선 : mobile first -->
+    <!-- 
+        // 가로 576px 보다 큰 화면에 적용
+        @media screen and (min-width : 576px) {......}
+        // 가로 768px 보다 큰 화면에 적용
+        @media screen and (min-width : 768px) {......}
+        .....
+
+        작은거 부터 조건을 걸어주면서 작성 하는게 모바일 우선
+
+        
+     -->
+
+<!-- 데스크탑 우선  -->
+<!-- 
+        
+        //가로 576px 보다 작은 화면에 적용
+        @media screen and (max-width : 576px) {......}
+        //가로 768px 보다 작은 화면에 적용
+        @media screen and (max-width : 768px) {......}
+        .....
+        
+     -->
+    
+     <div>Content
+        <i class="fas fa-home"></i>
+     </div>
+
+     <!-- <i class="fa-solid fa-house-user"></i>
+     <i class="fa-brands fa-instagram"></i> -->
+
+</body>
+</html>
