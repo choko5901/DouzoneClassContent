@@ -21,7 +21,7 @@
         align-items: center;
 
         /* transform: rotate(-90deg); */
-        /* transform: translate(100px,50px); */
+            /* transform: translate(100px,50px);  */
         /* x축(왼쪽에서 오른 기준), y축(위에서 아래기준) */
 
         transition:  1s;
@@ -30,13 +30,13 @@
     }
 
     .box:hover{
-        /* position: relative; */
-         /* left: 30px;
+        /* position: relative;
+         left: 30px;
         top : 30px; */
         /* 위에 와 같이 이동하려면 무조건 위치의 기준이 필요
         그래서 포지션 리레이티브를 준거임 */
        
-        transform: translate(30px, 30px);
+        /* transform: translate(30px, 30px); */
         
         /* 위에와 다르게 transform 은 요소 자체를 이동시키는 거라
         위치 기준이 필요없이 이동이 가능하다. */
@@ -44,15 +44,15 @@
         /* transform : scale(1.5); */
         /* 크기가 커진다 */
 
-        /* transform:  skew(45deg, 45deg); */
+        transform:  skew(45deg, 45deg);
         /* 기울임에대한 문법 꼭 x,y축 기준을 써줘야해 */
         
     }
-    img{
+    /* img{
            width: 300px;
            border: 5px solid blue;
            transform: perspective(500px) rotate(45deg);
-    }
+    } */
 
 
 </style>
@@ -78,7 +78,7 @@
 <!-- 회전 : rotate3d(x,y,z,a(각도)), rotateX(x), ratateY, roatateZ -->
 <!-- 원근법 : perspective(n) 원근법(거리) 단위 -->
 
-<img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20131031_145%2Fsoma0905_1383201092838jhd3p_PNG%2Fznlf.PNG&type=sc960_832" alt="슬라임" width="300px">
+<!-- <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20131031_145%2Fsoma0905_1383201092838jhd3p_PNG%2Fznlf.PNG&type=sc960_832" alt="슬라임" width="300px"> -->
 
 
     <div class="box">box</div>
