@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>scroll</title>
+
+<style>
+
+body{
+
+    font-size: 3rem;
+    text-align: center;
+} 
+
+.container{
+    display: flex;
+    
+    height: 100vh;
+    overflow: auto;
+    scroll-snap-type: x;
+    /* scroll-snap-type 은 스크롤 방향을 정하는 명령문
+    y는 아랫 방향이다 x는 가로 방향이다 . 
+    proximity,mandatory는 스크롤 자동으로 위치 시켜
+    주는 영역을 어느정도 조절 가능한 명령어이다. */
+}
+
+.area{
+    scroll-snap-align: end;
+    /* 스크롤 내릴때 자식영역으로 어느정도 갔을 때 
+    자동으로 스크롤 위치를 설정 해주는 데 스타트는 위부분
+    center 은 가운데 end 는 끝 부분이다. */
+        height: 70vh;
+        width: 50vw;
+        flex: none;
+        /* flex 박스에서 컨텐츠를 분리 시키는 축약 명령어 원래는
+        grow factor 을 사용 */
+
+
+}
+.area:nth-child(2n-1) {
+
+background: gold;
+}
+
+.area:nth-child(2n) {
+    background: dodgerblue;
+}
+
+</style>
+
+
+
+</head>
+<body>
+
+    <div class="container">
+    <div class="area">1</div>
+    <div class="area">2</div>
+    <div class="area">3</div>
+    <div class="area">4</div>
+    <div class="area">5</div>
+</div>
+
+</body>
+</html>

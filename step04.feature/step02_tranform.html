@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    .box{
+
+        display: flex;
+        width: 100px;
+        height: 100px;
+        background: tomato;
+
+        /* box 글자가 중앙으로 정렬 */
+        justify-content: center;
+        align-items: center;
+
+        /* transform: rotate(-90deg); */
+        /* transform: translate(100px,50px); */
+        /* x축(왼쪽에서 오른 기준), y축(위에서 아래기준) */
+
+        transition:  1s;
+        /* transition과 transform을 사용하면
+        동적인 효과가 좀더 부드럽게 작동된다 */
+    }
+
+    .box:hover{
+        /* position: relative; */
+         /* left: 30px;
+        top : 30px; */
+        /* 위에 와 같이 이동하려면 무조건 위치의 기준이 필요
+        그래서 포지션 리레이티브를 준거임 */
+       
+        transform: translate(30px, 30px);
+        
+        /* 위에와 다르게 transform 은 요소 자체를 이동시키는 거라
+        위치 기준이 필요없이 이동이 가능하다. */
+
+        /* transform : scale(1.5); */
+        /* 크기가 커진다 */
+
+        /* transform:  skew(45deg, 45deg); */
+        /* 기울임에대한 문법 꼭 x,y축 기준을 써줘야해 */
+        
+    }
+    img{
+           width: 300px;
+           border: 5px solid blue;
+           transform: perspective(500px) rotate(45deg);
+    }
+
+
+</style>
+
+
+
+<body>
+    <!-- transform : 요소의 변환 효과 지정-->
+    <!-- transform : 변환함수1, 2, 3, ... -->
+    <!-- transform : 원근법 이동 크기 회전 기울임 ; -->
+    
+    
+    
+    <!-- 2D 변환 함수   -->
+<!-- 이동 : translate(x, y), translateX(x), translateY(y) 이동(x축, y축) 단위 -->
+<!-- 크기 : scale(x, y), scaleX(x), scaleY(y) 크기(x축, y축), 없음(배수) -->
+<!-- 회전 : rotate(degree) 회전(각도), deg -->
+<!-- 기울임 : skew(x-deg, y-deg), 기울임(x축, y축), deg -->
+
+<!-- transform 3D 변환 함수 -->
+<!-- 이동 : translate3d(x,y,z), translateZ(z) -->
+<!-- 크기 : scale3d(x,y,z) scaleZ(z) -->
+<!-- 회전 : rotate3d(x,y,z,a(각도)), rotateX(x), ratateY, roatateZ -->
+<!-- 원근법 : perspective(n) 원근법(거리) 단위 -->
+
+<img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2F20131031_145%2Fsoma0905_1383201092838jhd3p_PNG%2Fznlf.PNG&type=sc960_832" alt="슬라임" width="300px">
+
+
+    <div class="box">box</div>
+
+</body>
+</html>
