@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step03_operator</title>
+</head>
+<body>
+<script>
+
+// 산술연산
+// 사칙연산 : + - * /
+// 특수연산 : %: 나머지 값에 대한 
+
+console.log(10%3);
+// ** 제곱
+
+console.log(2 ** 10);
+
+// 변수로도 사칙연산 가능
+// 문자열의 경우 덧셈은 문장을 만들어서 출력 해주는 기능
+// 증감연산자 (++, --);
+
+let num = 10;
+console.log(num++); // 10 으로 출력되고 num은 11로 저장됨
+console.log(++num); // 11이 증가 하고 출력 하니 12
+console.log(num--); // 12가 출력되고 감소되니 nume 11로 저장
+console.log(--num); // 11이 10으로 감소하고 출력되니 10으로 출력되고 num은 10으로 저장
+
+
+// =+ =-
+
+//비교 연산자
+
+//  > , >=, <=, !==, ===
+
+let a =10;
+let b =20;
+
+console.log(a==10);
+console.log(a!=10);
+console.log(a >= b);
+
+// ==, ===
+
+let c = "10";
+let d = 10.0;
+
+// typeof(피연산자): 피연사자가 어떠한 데이터 타입인지 출력 가능
+console.log(typeof(a),a);
+console.log(typeof(c),c);
+
+console.log(a==c); //true
+console.log(a===c); // false 값은 같으나 타입이 다르니 false가나옴
+
+console.log(a==d);
+console.log(a===d);
+
+// c+ d = ?
+console.log("---")
+console.log(c+d);
+
+
+//JS에서는 실수 정수 구분 안한다 둘가 같은 숫자형
+
+//논리연산자
+// || , &&, !
+
+//  || OR : 둘중 하나라도 참이면 True
+
+console.log(true || false);
+
+// && 둘 모두 결과가 참이면 TRUE
+
+console.log(true && true);
+
+//! 부정 not : 참과 거짓의 결과
+
+console.log(true)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+    
+</body>
+</html>

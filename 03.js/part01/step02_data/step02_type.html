@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_type.html</title>
+</head>
+<body>
+
+
+<script>
+
+    // 1. number
+    // console.log(-10);
+    // console.log(-10.25);
+
+    // JS에서는 넘버에서 정수 와 실수 따로 구분 하지 않음
+
+    // 진수
+    let binaryNumber = 0b01000001;
+    // console.log(binaryNumber);
+
+    let octalNumber =0o101;
+    // console.log(octalNumber);
+
+    let hexNumber = 0x41;
+    // console.log(hexNumber);
+
+    //실수로 통합 (===)
+    // console.log(1===1.0); //true
+
+    // 추가
+    // console.log(10/3);
+    // console.log(10/0); //infinity
+    // console.log('Ten'/3); // NaN : Not A Number
+
+
+    //String
+
+    // ""(큰 따옴표) / ''(작은 따옴표) 로 문자형 표시
+
+    // console.log("문자열")
+    // console.log('문자열')
+
+    // document.write('<a href="https://www.naver.com">네이버</a>');
+
+    // console.log("큰따옴표 안에 '작은 따옴표'");
+    // console.log('작은 따음표 안에 "큰 따옴표"');
+    // console.log('작은 따음표 안에 \'작은 따옴표\'');
+    // console.log("큰따옴표 안에 \"큰 따옴표 \"");    
+
+    //큰 따옴표 안에 큰 거 작은거 안에 작은거 하려면
+    //꼭 이스케프 문자인 \을 적어줘야 문자열로 인식됨
+
+
+    // console.log('엔터로 
+    // 표현하기');
+
+    // console.log(`엔터로
+    // 표현하기`);
+
+    // `(베틱) 베틱은 적혀진 모양 그대로 출력하기위한 문자 줄바꿈이던 머던
+
+    // let height = 180;
+    // let weight = 71;
+    // console.log("강사의 키는 : 180 이다.");
+    // console.log("강사의 키는 : " + height+ " 이다.");
+    // console.log(`강사의 키는 : ${height}이고 ${weight} 이다.`)
+    
+
+    // Boolean
+    console.log(true);
+    console.log(false);
+    console.log(10>11);
+
+    //undeginded /null
+    //undefinded :값이 할당되지 않은 상태
+
+    let company;
+    console.log(company);
+
+    //null : 어느 자료형에도 속하지 않는 데이터가 존재하지 않은 상태
+    let nullvalue =null;
+    console.log(nullvalue);
+
+    //symbol : 변경 불가능한 원시타입, 이름의 충돌이 없는 객체의 유일한 프로퍼티 키 생성 시 
+    
+    let key = Symbol('key');
+    console.log(key);
+    let obj= {}; //객체
+    
+    obj[key]    = 'value';
+    console.log(obj);
+
+    console.log(obj[key]);
+
+    // symbol 은 유일한 값이다 ?!
+    let symbolA = Symbol('symbol');
+    console.log(symbolA);
+
+    let symbolB = Symbol('symbol');
+    console.log(symbolB);
+    console.log(symbolA===symbolB);
+    // 각각 표현하는건 같은 거라도 symbol은 각각 유일한 값이기때문에
+    //  심볼 A 랑 심볼 B 는 같은 것이 아니다.
+
+
+    
+
+
+
+
+
+</script>
+
+    
+</body>
+</html>
