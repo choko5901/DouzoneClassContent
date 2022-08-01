@@ -23,15 +23,31 @@ function add(x,y) {
         console.log( x + y );
 }
 
+
+// 함수 생성하는 방법 
+//  1. 함수의 선언식
+function getNames() {
+    console.log();
+}
+getNames();
+
+//  2.함수의 표현식
+let getAges = function() {
+
+        console.log();
+
+} 
+getNames();
+
+
 // 호출 : 생성된 함수를 사용하는 행위
 add(1, 2);
 add(3,5);
 add(1); 
 // x 값은 1인데 y값은 undefined 라 Nan 이 출력된다
 add(1,2,3);
-
-
-
+// 그냥 원래 x y 만 있는데 이게 넘치면 마지막 3은 무시된다
+//  즉 넘어가는 매개편수는 무시된다.
 
 // 파라미터 
 
