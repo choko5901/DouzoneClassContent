@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_script class=html</title>
+    
+</head>
+
+<script>
+
+    document.getElementById('header').innerHTML = "Header from Inner Body Script";
+
+</script>
+
+<body>
+ 
+    <!-- script 적용 -->
+
+    <div id="header">Header</div>
+    <div id="section">Section</div>
+
+    <!-- 내부 body script -->
+    <script>
+
+        document.getElementById('header').innerHTML = "Header from Inner Body Script";
+
+    </script>
+
+    <!-- 외부 body script -->
+    <script src="/step02_script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+document.getElementById('section').innerHTML = " Section from Outer Script";
