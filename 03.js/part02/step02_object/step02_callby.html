@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //값에 의한 전달 (원시 타입 일때) : 불변 데이터
+        //  Call By Value 실제 메모리상의 값을 전달
+
+
+        let height = 175;
+        let number = height;
+
+        console.log(height);
+        console.log(number);
+
+        // 비교
+        console.log(height===number);
+
+        height = 183 ;
+
+        console.log(height);
+        console.log(number);
+        
+        console.log(height===number);
+        // number은 아직 처음 height의 메모리의 위치를 가르키고 있기때문에
+        // 아직 175에 머무르고 있다는 뜻이다.
+        
+
+        // 객체 타입 (참조 타입)은 어떻게 될까? : 가변 데이터
+        // 참조에 의한 전달 Call by Reference
+
+        let person = {
+            name: "it"
+                 }
+
+
+        let copyPerson = person;
+
+        console.log(person);
+        console.log(copyPerson);
+        console.log(person ===copyPerson);
+        // 실제 내용 + 타입
+        
+        // 복사한 객체의 정보를 변경
+    
+        copyPerson.name = "dev";
+        console.log(copyPerson);
+        console.log(person); // 값은 copyPerson 을 변경했는데
+        // person의 값까지 변경됨
+        // 왜냐하면 copyPerson과 person 이 다른 값을 각각 지칭 하는게
+        // 아니라 주소를 지칭한다는 것이고  let copyPerson = person는
+        // 두 객체가 바라보는 주소가 같다는 뜻이고 원래 그 주소가 바라보는
+        // 값이 it 였는데 그 값이 변경된거라 값은 변경 되었지만
+        //  두 객체가 바라보는 주소가 같기 때문에 둘다 동시에 변경 되는 것이다.
+
+                 
+
+        // EX
+    
+        
+        let nums = [1, 2 ,3 ,4 ,5];
+            console.log(nums);
+        
+            
+        // 얕은 복사
+
+        let numbers = nums;
+        numbers[2] = 30;
+
+        // console.log(numbers);
+        console.log(nums);
+    
+        // 깊은 복사 (다른 주소에 원본이든 복사본 저장해서 원본을 보존하는 느낌이라 보면 됨 )
+
+        let deepNumbers = [];
+        
+        for(let i = 0; i < nums.length; i++){
+
+            deepNumbers[i] = nums[i];
+
+        }
+        console.log(deepNumbers);
+
+        // nums & deppNumbers
+        deepNumbers[2] = 3;
+        console.log(deepNumbers);
+
+        //nums ?
+        console.log(nums);
+
+
+                 
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

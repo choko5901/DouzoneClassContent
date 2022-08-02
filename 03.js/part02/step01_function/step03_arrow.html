@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step03_arrow.html</title>
+</head>
+
+<body>
+
+    <script>
+        //  화살표 함수 : 변수에 익명 함수를 사용하는 경우 표기법으로 =>
+        // 표현, function 사용하지 않음
+
+        // let arrow = function() {
+
+        //     console.log('arrow');
+        // }
+        // arrow();
+
+        // 화살표 함수로 변경
+
+        let arrow = () => {
+
+            console.log('arrow');
+
+        }
+
+        arrow();
+
+        // 화살표함수로 바꿔보기
+        // let sum = function(x,y) {
+
+        //     return x + y ;
+        // }
+
+
+        //sum 화살표 함수로 바꾸면?
+
+        let sum = (x, y) => {
+
+         return   x + y
+        
+        // return
+        //  1. 함수 호출 시 , 기능 결과를 갖고 있는 것
+        //  2. 해당 코드블럭 자체가 종료
+        //  화살표 함수에서 return 구문이 있는 경우 (단 , return 구문 하나만 있을 때 )
+        //  코드 블럭 및 return 키워드 생략 가능
+        // let sum =(x,y) => x + y ;
+    }
+
+
+        console.log(sum(1,2));
+
+        function immediatelyFunction() {
+            console.log(1);
+
+        }
+        immediatelyFunction();
+
+        //  즉시 실행 함수 : 구현과 동시에 호출, 함수명으로 호출 되지 않음
+        //  웹페이지 화면 전화 혹은 렌더링 직후 바로 실행 되어야 하는 기능 (ex 초기 데이터 세팅)에 사용
+        
+        (function immediatelyFunction1_2() {
+            console.log(1);
+
+        }());
+
+        (function immediatelyFunction2(name) {
+            console.log(name);
+
+        }("JavaScript"));
+
+
+        let name_a = "JavaScript";
+        (function immediatelyFunction2_2(name_a) {
+            console.log(name_a);
+
+        }(name_a));
+
+        // 즉시 실행 함수 내부 변수에는 외부로 부터 접근이 불가
+        // 불필요한 전역 변수를 생성하지 않고 , 외부 전역 변수와 충돌하지 않는 
+        // 장점이 있음
+
+        let pringAge = (function () {
+            let age = 24;
+            return age;
+        }());
+
+        console.log(pringAge);
+        age = 30;
+        console.log(pringAge);
+        // age가 외부에서 30으로 재 할당 되어도 즉시 실행 함수는
+        // 외부 전역 변수에 영향 받지 않기 떄문에 그대로 24가나옴
+
+        // 의문 ? age가 처음 선언 됬는데 왜 var let 처럼 선언문이없어도됨?
+        // 해당 변수가 처음 선언 및 사용 된거면 앞에 var 이 생략 된것이라 고려하고
+        //  해당 변수를 초기화 한다
+        
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

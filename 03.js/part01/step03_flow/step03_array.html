@@ -99,8 +99,188 @@
             console.log(nums.join('-'));
 
 
+            console.log("---0802---")
             
             // find : (뒤에서 새로운 문법 !! 배우고 다시 알아보자)
+
+            // find : 테스트 함수의 조건에 맞는 첫번째 요소 값을 변환
+
+            let numbers = [1, 5, 6, 8, 5];
+            numbers.find(item => console.log(item));
+            // item의 인자가 배열로 부터 순서대로 받아와 파라미터로 사용되어 출력한걸 보여준다
+            // 함수 자체가 파라미터로 들어간거임
+            let even = numbers.find( (item) => item%2 ===0);
+
+            console.log(even);
+            // 이대로 두면 2만 출력되지 4는 출력이 안된다. 퀘스트 조건이 맞는 첫 요소만 출력하는게 find 이기 때문이다
+
+            let cats = [
+                {name: '마일로', age: 10},
+                {name: '앙꼬', age: 11},
+                {name: '포우', age: 12},
+                {name: '포니', age: 6},
+        ]
+            // cats의 객체 어떤 타입 ??? //object - Array
+           // console.log(typeof cats);
+             
+            // ?? find를 통해서 age가 10살 이하인 고양이만 검색??
+
+            let under10 = cats.find(cat => cat.age <=10 );
+            console.log(under10);
+            // 안됨 find는 값이 하나 만나옴
+
+            // filter
+
+            let under1010 = cats.filter(cat => cat.age <=10);
+            console.log(under1010);
+
+
+            // ex
+
+            const todos = [
+
+                {
+                    id: 1,
+                    todo: '자격증공부',
+                    done: false
+
+                }
+                ,
+                {
+                    id: 2,
+                    todo: '자바 공부',
+                    done: true
+
+                }
+,
+                {
+                    id: 3,
+                    todo: '키오스크',
+                    done: true
+
+                }
+                ,{
+                    id: 4,
+                    todo: '영어 갱신하기',
+                    done: false
+
+                }
+,
+                {
+                    id: 5,
+                    todo: '여행가기',
+                    done: false
+
+                }
+
+
+            ]
+
+
+            // todos 에서 내가 끝낸일 (done : true)만 출력하려면 ?
+
+            let todo_ture = todos.filter(doing => doing.done === true);
+            console.log(todo_ture);
+
+
+            // 한줄 씩 출력 해보기
+
+            for(i = 0 ; i < todos.length ; i++)
+            {
+
+                let todo1 = todos[i];
+                console.log(todo1);
+
+            }
+
+
+            // numbers
+            // forEach : 배열 내부의 요소를 하나 하나 반복을 통해 접근하는 기능
+            
+            let sum = 0;
+            numbers.forEach(num => sum += num);
+            console.log(sum);
+
+
+            // map : forEach기능에다가 새로운 배열을 만들어서 반환 하는 기능있음
+            
+            let sum2 =0;
+            numbers.map(num => sum2 += num );
+
+            console.log(sum2);
+
+            let newArray = numbers.map(number => number + 10);
+
+            console.log(newArray);
+
+            // forEach를 통해 같은 결과를 얻으려면 ??
+
+            let forEachArray = [];
+
+            numbers.forEach(number => {
+                forEachArray.push(number +10);
+            })
+
+            console.log(forEachArray);
+
+            //reduce :
+
+            let items = [
+            {
+                name:'icecream',
+                price: 2000
+            },
+            {
+                name:'snack',
+                price: 1500
+            },
+            {
+                name:'macaron',
+                price: 1700
+            }
+
+            ];
+
+            // 문제 3가지 item의 price 총합을 구하시오 ?!
+            let totalPrice = items.reduce((totalPrice, item )=> totalPrice + item.price, 0);
+            console.log(totalPrice);
+
+          
+
+            
+
+
+            let reduceArray = [1, 2, 3, 4, 5];
+        // reduceArray.reduce(function(accumulator, currentValue, currentIndex, array) {
+        //     console.log("accumulator : " + accumulator);
+        //     console.log("currentValue : " + currentValue);
+        //     console.log("currentIndex : "+ currentIndex);
+        //     console.log("array : " + array);
+        // });
+
+        // reduce 라는 메소드 안에 이미 기능이 내제 되어 있어서 function(a,b,c,d) 이런식으로 매개변수명은 전혀 상관없다.
+        // 명칭은 상관 없이 순서만 지키면 각각에 저장된 기능을 수행하게된다.
+
+
+        // let result = reduceArray.reduce(function(accumulator, currentValue) {
+        //     console.log(accumulator, currentValue);
+        //     return accumulator + currentValue;
+        // }); 
+        // console.log(result);
+
+        let result = reduceArray.reduce((aaaa,bbbb) => aaaa + bbbb );
+        // 화살표 함수형도 마찬가지 이다 이미 reduce라는 매소드 안에 기능을 가지고 있다는건 알고 있다 그래서 
+        // 매개변수 명에 상관없이 위치만 지켜주면 그에 대한 기능을 수행한다.
+                  
+
+        
+
+        console.log(result);
+
+
+            
+
+
 
 
             

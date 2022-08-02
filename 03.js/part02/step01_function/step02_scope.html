@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_scope.html</title>
+</head>
+
+<body>
+    <script>
+
+
+        // 스코프 : 변수에 접근 할 수 있는 범위
+        // -종류 : 전역(global) , 지역(local)
+        // - 지역스코프 종류 : 함수(var) , 블록(let, const) 스코프 
+        
+
+
+        // var : 함수에서 선언한 변수는 함수 내에서 접근 가능
+        function varFunction() {
+            var x = 10;
+            // console.log(x);
+            
+        }
+
+        varFunction();
+        // console.log(x) ; //error
+
+
+            if(true) {
+            var y = 20;
+            let a =40;
+            // console.log(y); 
+        }
+        // console.log(y);
+        // console.log(a);
+
+        //let, const : 블록내에서 선언한 변수는 해당 블록에서만 접근가능
+
+        function keywordFunction() {
+
+            let z = 30;
+
+        }
+
+        // console.log(z);
+
+        //ex1
+
+        function hello() {
+            for (var i = 0; i < 10; i++);
+            console.log(i);    
+        }
+
+        // hello();
+        //var 은 함수 레벨이기때문에 반복문을 쓰던 함수 내에서 정의하면
+        // 외부에서 함수로 출력 가능하다
+
+
+        // ex2 : 중첩 범위에 따른 변수 접근을 생각 해봐야 한다!
+
+
+        {
+            {
+                {
+                    {
+
+                    }
+                }
+            }
+        }
+
+        console.log(age); //undefined
+        //아직 선언을 안했는데 error가 아니고 왜 undefined 인가?
+        // 내부 행위에서 할당전에 미리 변수만 스캔 후 메모리에 기억하고 있다
+        //  이때 초기화 및 값을 할당을 하진 않기 떄문에 결론 적으로 undefined라
+        // 뜬 것이다.
+        // 이를 호이스팅 이라 하는데 코드에 선언된 변수를 상단으로 끌어 올리는 행위
+
+
+
+        // let으로 age 선언하면 위에는 error가 남
+
+    
+        
+        var age =24;
+        // let age =24;
+        console.log(age); // 초기화가 된 값 : 24
+        // let으로 age 선언 시 실행자체가 안됨
+
+        function hoistiongFunction() {
+            console.log(age);
+            var age =24;
+            console.log(age);
+        }
+
+        hoistiongFunction();
+
+        // 함수
+
+        //함수는 변수와 다르게 호이스팅이 변수만 스캔 하는 것이 아닌
+        //  값을 할당하는 것 까지 바로 등록 되기때문에 
+        //  함수 선언위치 전에 값이 출력이 가능하다.
+
+        printName();
+
+        function printName() {
+            console.log("IT");
+        }
+
+        printName();
+
+        // 단 함수 중에 함수 선언식으로 생성하게 되면 
+        // 호이스팅이 값까지 올리지 못하기 때문에
+        // 에러가 발생한다.
+
+        // printName2();
+
+        // var printName2 = function {
+        //     let name = 'IT'
+        //     console.log("name");
+
+        // }
+        // printName2();
+
+
+
+        // ex3 : scope chain
+        var abc = "전역 변수 abc"
+        function outer() {
+            var xyz ="outer 지역 변수 xyz"
+            
+            console.log(abc); // 1. 답 : 전역 변수 abc 
+            console.log(xyz); // 2. 답 : outer 지역 변수 xyz
+
+
+            function inner() {
+
+                var abc = "inner 지역변수 abc";
+                console.log(abc); // 3 답: inner 지역 변수 abc
+                console.log(xyz); // 4 답 :outer 지역 변수 xyz
+
+            }
+
+            inner();
+        }
+
+        outer();
+        console.log(abc); // 5 : 전역 abc
+        console.log(xyz); // 6 : error
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+
+
+
+</body>
+</html>

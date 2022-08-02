@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_object.html</title>
+</head>
+<body>
+    <script>
+
+        // 객체 : 키 : 값으로 구성된 프로퍼티의 집합
+        // - 구성요소 : 프로퍼티키 : 프로퍼티 값
+        //  종류 : JS 내에서 기본타입(원시 타입)을 제외한 모든 것은 객체
+        // 객체는 거의 많은데 그중에 배열 document , ..... , {} 등이 있다
+        
+        
+        
+        // 객체 리터럴 : {}
+
+        // let obj1 = {name: "it", age: 24};
+        // console.log(obj1);
+        // console.log(obj1.name);
+
+        // let obj2 = {};
+        // console.log(obj2);
+
+        // obj2.name = "it2";
+
+        // console.log(obj2);
+        
+        // obj2.name = "it222";
+        // console.log(obj2);
+        
+        // obj2.name2 = "it222";
+        // console.log(obj2);
+
+        // 프로퍼티의 키는 변경되지 않는다.
+
+        // typeof
+        // console.log(typeof(obj1));
+        // console.log(typeof(obj2));
+
+        // valuOf()
+        // console.log(obj1);
+        // console.log(obj1.valueOf());
+        // console.log(obj2);
+        // console.log(obj2.valueOf());
+
+        // step 02 객체 생성자
+
+        // let obj3 = new Object();
+        // console.log(obj3);
+
+        // obj3.name = "it";
+        // console.log(obj3);
+
+        // step03 (사용자 정의) 생성자 함수
+        // 생성자 함수는 대문자로 시작한다, 
+        // 생성자 함수임을 인식하도록 지정
+        function Customer() {
+            // this : 함수 내부에서는 객체 자기 자신을 의미한다.
+        }
+
+        // let obj4 = new Customer();
+
+        //  아래의 함수 는 car라는 객체를 생성하기 전에 
+        //  car라는 객체의 기본 설계를 하는 거라 생각 하면된다
+        //  그럼 설계에서 prperty key (속성) , value(값) 등을 정한다
+        
+        
+        
+        // let car ={
+
+        //     brand: "it",
+        //     color: "gold",
+        //     price: 20000
+        // }
+        
+        // 위는 car 라는 변수를 다음과 같은 프로퍼티를 가지게 리터럴로 표현
+        // 변수로 선언하면 값을 바로 가지고 있어 출력된다
+
+        function Car(color) {
+            this.brand = "it";
+            // this.color = "gold";
+            this.color= color;
+            this.price = 20000;
+            //프로퍼티 키에 들어 갈 수 있는건 : 문자열 , 심볼
+            //프로퍼티 값에 들어 살 수 있는건 모든 값이다
+
+            this.test=Symbol('test');
+
+            this.turnOn = function() {
+                // console.log('시동이 커진다')
+            } 
+            // 프로퍼티 값에 함수도 객체 이기 때문에 들어 갈 수 있다.
+
+        }
+    
+        //  생성자 함수는 단순히 프로퍼티를 적어서 생성 하면 그값이 나오지 않는다
+        //  왜냐하면 생성자 함수는 본인 자기 자신의 속성이라고 의미하는 this가 있어야
+        //  함수를 출력 할때 본인의 속성으로 출력하게 된다.
+
+        // let car = new Car();
+        // console.log(car);
+
+        // car.turnOn();
+
+        // 객체안의 기능 여기서는 turnOn을 매소드라 한다.
+
+
+
+        let myCar = new Car("red");
+        let yourCar = new Car("blue");
+
+        // console.log(myCar);
+        // console.log(yourCar);
+
+        // 생성자 함수를 활용하여 Student 객체를 생성하려고 합니다.
+        // 이떄 내부  property로 name(이름) grade(학년) id (학생 id) 값이 존재하고
+        // 기능으로는 이름과 학년 , 그리고 id 값을 모두 반환 하는 printInfo라는 매소드가 존재합니다.
+        // 주어진 건을 활용하여 Student 객체를 만들어 주세요
+        // Student(name, grade ,id) - 파라미터 3가지를 모두 받을 수 있도록 !
+
+        function Student(name, grade, id) {
+            this.name = name;
+            this.grade = grade;
+            this.id = id;
+
+            this.printInfo = function(){
+                return `이름 : ${name}, 학년 : ${grade}, 학생id : ${id} `;
+            }
+            
+            this.changeGrade= function(grade){
+            
+            this.grade = grade;
+            }
+        }
+
+        let ssb = new Student("ssb",4,"20220802");
+        // console.log(ssb);
+        // console.log(ssb.printInfo());
+
+        // console.log(ssb.grade);
+        ssb.grade =7;
+        // console.log(ssb.grade);
+        // console.log(ssb);
+
+
+        
+
+        ssb.changeGrade(9);
+        // console.log(ssb);
+
+
+
+    ssb.age = 24;
+    // 생성자 함수에 새로운 프로퍼티 추가
+    // console.log(ssb);
+
+    // 리터럴 vs 사용자 정의 함수 차이는 새로운 프로퍼티 추가시 리터럴은
+    // 일일이 다시 생성 해야하고 함수는 단순히 선언만 해도 추가된다
+
+
+    // for문을 통해서도 객체의 정보를 알 수 있다.
+    // for ~ in 
+    // 기본 속성은 객체의 프로퍼티의 키를 출력 
+
+    for(let data in ssb) {
+
+        // console.log(data);
+        
+        console.log(`key : ${data} - value : ${ssb[data]} `);
+        // 키 : 키값 - 값 : 키에대한 값
+    }
+
+    // for~of : 객체 출력 시도 : is not iterable
+    // iterable ??? :
+    // for(let data of ssb) {
+    //  console.log(data);
+    // }
+    // 출력 안됨
+
+
+
+    // 프로퍼티(객체 리터럴로 선언한 프로퍼티 일때만) 삭제 방법 
+    // 함수형은 삭제가 안됨
+
+    let Cat = {
+
+        name: "navi",
+        age:3,
+        weight: 3
+    }
+    console.log(Cat);
+    delete Cat.weight;
+    console.log(Cat);
+
+
+    // 함수형태로 객체를 생성하는 과연 화살표 문법으로도 생성 가능 할까??
+    // 일단 함수형으로 객체 생성
+
+//     function Dog (name, age) {
+//             this.name = name;
+//             this.age = age;
+//    }
+
+//  화살표 문법으로 객체 생성시 문제가 발생한다.
+
+//    const Dog = (name, age) => {
+//     this.name =name;
+//     this.age =age;
+
+//    }
+
+//    const mozi = new Dog("mozi", 4);
+
+// 내부 메소드를 화살표 함수로 만들 수 있을까?
+// --> 만들수가 없음 !
+
+
+const bank = {
+    // loan : function() {
+    //         console.log("대출 서비스");
+    // }
+
+    // 위의 주석을 화살표 함수로 바꿔보면?
+
+    loan : () => {
+        console.log("대출 서비스")
+
+    }
+}
+
+    bank.loan();
+
+
+
+    // 객체 보호
+        console.log("----객체 보호 ----");
+        const person= {name: "it"} ;
+
+        // isExtensible : 객체가 확장이 가능한지를 검증
+        console.log(Object.isExtensible(person)); //true
+
+        //객체 확장
+        person.age = 24;
+
+        // :객체의 확장을 막기
+        Object.preventExtensions(person);
+
+        person.id ="z-1234";
+
+        console.log(person);
+
+
+
+        // 2. 밀봉
+        // isSealed:    객체가 밀봉되어 있는지를 확인
+        console.log(Object.isSealed(person)); //false
+
+        person.age = 25;
+        console.log(person);
+
+        // seal : 객체 밀봉 (수정은 가능 , 프로퍼티 추가 /삭제 불가능)
+        Object.seal(person);
+        
+        person.age=24;
+        console.log(person);
+        
+        person.id = "z-1234";
+        console.log(person);
+
+        delete person.name;
+        console.log(person);
+
+        // 3. 동결
+        // isFrozen : 동결 여부를 확인
+        console.log(Object.isFrozen(person)); //false
+
+        // freeze : 객체 동결 (수정 ,프로퍼티  추가 삭제 불가능)
+        Object.freeze(person);
+
+        person.age = 26;
+        console.log(person);
+
+
+
+
+
+     
+
+
+    </script>
+
+    
+
+
+
+
+
+
+
+</body>
+</html>
