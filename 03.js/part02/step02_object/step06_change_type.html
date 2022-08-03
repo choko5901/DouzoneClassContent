@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step06_change_type</title>
+</head>
+
+<body>
+    <script>
+        // 타입 변환
+        // 명시적 vs 암묵적
+        
+        let x = 10;
+        console.log(typeof x); // 10 number
+        
+        let y = x + '';        // 암묵적으로 형변형
+        console.log(typeof y); // 10 string
+        
+        let z = x.toString();   // 명시적으로 형변경
+        console.log(typeof z ); // 10 string
+
+        // 암묵적
+        // 1.문자열 타입으로 변환
+        // 1) 숫자 - > 문자열
+        console.log(typeof (-120 + ''));
+        console.log(typeof (1 + ''));
+        console.log(typeof (NaN + ''));
+
+        // 2) 객체 - > 문자열
+        console.log(typeof({} + '')); //[object object] String
+        console.log(typeof([] + '')); // string
+        console.log(function(){});
+        console.log(typeof ((function(){}) + ''));
+
+        // 3) true/ false
+        console.log(typeof (true + ''));
+
+        // 2. 숫자 타입으로 변환
+        // 1) 문자열 -> 슷지
+        console.log(typeof(+'')); // 숫자 0
+        console.log(typeof(+'0')); // 숫자 0
+        console.log(typeof(+'1')); // 숫자 1
+        //  2) null & undefined - > 숫자
+        console.log(typeof(+'null')); // 숫자 0
+        console.log(typeof(+ undefined)); // NaN
+
+        // 3) 객체 -> 숫자
+        console.log(+{}) ; // NaN
+        console.log(+{name: 'it'}) ; // NaN
+        console.log(+[]); //0
+        console.log(+[1, 2]); // NaN
+
+        console.log(+false); // 0
+        console.log(+true); // 1
+        //  위에 전부다 타입은 숫자형이다
+        
+        // '' , null , [] , false - > 0
+        //  undefined, {} , [not empty] -> NaN
+        
+        // 3. boolean 타입으로 변환
+
+            //명시적으로 형변환 한게 밑에임
+            console.log(Boolean(0));
+            console.log(Boolean(1));
+            console.log(Boolean({}));
+            console.log(Boolean({name: "it"}));
+            console.log(Boolean(null));//
+            console.log(Boolean(undefined));//
+
+            // 암묵적으로 형변환 하기
+            // falsy : 거짓으로 평가되는 값(결과로 false)
+            // *** false, undefined, null, 0 , NaN, ''
+
+            if(0) {
+                console.log('0');
+               // 0 : false
+            }
+            if(1) {
+                console.log('1');
+                // 1: true
+                
+            }
+            if(null) {
+                console.log('1');
+                // null: false
+                
+            }
+            if(NaN) {
+                console.log('1');
+                // null: false
+                
+            }
+            if('') {
+                console.log('1');
+                // null: false
+                
+            }
+
+            // 명시적 : string, Number, Bollean
+
+
+            // 단축 평가
+
+            'Book' && 'Movie'
+            console.log('Book' && 'Movie'); // Movie?!
+            console.log('Book' || 'Movie'); // Book?!
+
+            
+            //중요함 암기 하셈 아래꺼
+
+            // 단축 평가 결과
+
+            // true && value ->>> value
+
+            // true || value ---> true
+
+            // false && value ->>>> false
+            // false || value ->>>> value
+
+
+            // 조건문을 대신하여 사용가능
+
+            let isLogin = true;
+            let viewMessage = " ";
+
+            if(isLogin) {
+                viewMessage = "어서오세요";
+            }
+
+           viewMessage = isLogin && "어서오세요";
+           
+        //    나중에 리액트 할떄 많이 쓰이니 항상 기억 해
+
+            isLogin =false;
+
+        if(!isLogin) {
+            viewMessage = " 로그인에 실패했습니다. " ;
+
+        }
+        
+        viewMessage = isLogin || "로그인에 실패했습니다"
+
+
+            
+
+
+
+
+
+
+
+
+    </script>
+    
+
+
+
+
+
+
+
+</body>
+</html>

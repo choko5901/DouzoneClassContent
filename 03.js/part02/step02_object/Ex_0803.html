@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex_0803</title>
+</head>
+<body>
+    <script>
+        // 1번
+        var nums = [100, 200, 300, 400, 500];
+        
+        nums.splice(3,2);
+
+        console.log(nums);
+        // 2번
+        var arr = [200, 100, 300];
+       
+        arr.splice(2,0,10000);
+        console.log(arr);
+
+        // 3번
+       
+        var year = '2022';
+        var month = '08';
+        var day = '03';
+        var hour = '11';
+        var minute = '34';
+        var second = '27';
+
+        var date = year.concat(`/${month}/${day} ${hour}:${minute}:${second}`)
+        console.log(date);
+        
+        
+        // 4번
+
+        let planet = ['수성', '금성', '지구', '화성', '목성', '토성', '천왕성', '해왕성'];
+
+        function getNames(x) {
+            i = x -1 ;
+            console.log(planet[i]);
+        }
+        getNames(1);
+
+
+        // 5번
+
+        function game369(y) {
+
+            if(y%3 === 0){
+                console.log("짝");
+            }
+            else {
+                console.log(y);
+            }
+
+
+        } 
+
+        game369(6);
+
+
+
+        // 6번
+        
+        function reString(z) {
+            
+            let reverse = '';
+            
+            for (i = z.length-1 ; i >= 0; i--){
+                // 조건식이 0보다 클떄 동안 반복해라
+                // 아까 = 0 은 0일때 돌아라 
+                // 그러니 안돌지
+
+                
+            reverse = reverse + z[i];
+            
+            }
+            
+            console.log(reverse);
+
+        }
+        reString("거꾸로");
+        // 7번
+
+        let planet_eng = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
+
+        function changeEng(x) {
+
+            y = planet.indexOf(x);
+            console.log(planet_eng[y]);
+           
+        }
+
+        changeEng('수성');
+
+        // 8번
+        
+            let gram2 = 'Javascript';    
+
+            for (i = 0; i <=8 ; i++ ) {
+                
+                console.log(gram2.substring(0 + i, 2 + i))
+               
+            }
+       
+        
+
+        //  9번
+
+
+        function NotAbc(x) {
+            const checkout_abc = /[A-B]/g;
+            // 의문점1 const checkout_abc = /^[a-z] + $ /g; 이건 왜안됨?
+            // console.log(checkout_abc.test(x));
+
+            if(checkout_abc.test(x) === true){
+                console.log("YES")
+            }
+            else {
+                console.log("NO")
+            }
+
+        }
+       
+        NotAbc('A');
+
+        // 10번
+        let students = ['강권모','강보라','김경률','김경욱','김민욱','김재선','김현민','박상민','박수용','박주용','배병서','배진경', '손용민','이광석','이동훈','정주현','정혜지','주동석','최정현','홍민향','황동하']
+
+        students.sort();
+
+        for (i = 0 ; i <= students.length -1 ; i ++){
+
+            console.log('번호 : ' + (i+1) + "," + " 이름: " + students[i] );
+
+        }
+
+        // 11번
+        function first_t(x) {
+
+            x = x.split(/\s/);
+            
+            name = " "
+            
+            for(i = 0; i <= x.length -1; i++ ){
+                
+                name = name + x[i].charAt(0);
+                
+                               
+            }
+            console.log(name);
+
+        }
+
+        first_t("복잡한 세상 편하게 살자");
+
+    
+    </script>
+
+
+
+
+</body>
+</html>

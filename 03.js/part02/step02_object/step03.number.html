@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Number
+
+        Number("0");
+        console.log( Number("0"));
+        //Number 빌트인 규칙에 의해 문자열 0 이 자동 형변환 됨
+        console.log(Number(true));
+        console.log(Number(false));
+
+        // isXXX
+            // isFinite는 들어온 값이 유한수 일때 True를 출력
+            console.log(Number.isFinite(0)); //true
+            console.log(Number.isFinite(Infinity)); //false
+            console.log(Number.isFinite(null)); //false
+            console.log(Number.isFinite(NaN)); //false
+
+            // isInteger: 정수인지 검사하여 정수 일때 true
+
+            console.log(Number.isInteger(1));   //true
+            console.log(Number.isInteger(1.0)); //true
+            console.log(Number.isInteger(0.5)); //false
+            console.log(Number.isInteger("100")); //false
+            // isInteger 자동으로 형변환 안해주고 그 형태 그대로 검사
+
+            // isNaN : NaN일때 ture
+            console.log(Number.isNaN(NaN));
+
+        
+        // tofixed : 숫자를 반올림
+
+            console.log((12.345));
+            console.log((12.345).toFixed())
+            console.log((12.345).toFixed(1))
+
+        // toString : 숫자를 문자열로 반환
+        
+        console.log((10).toString());
+        console.log((16).toString());
+        console.log((16).toString(2));
+        console.log((16).toString(8));
+        console.log((16).toString(16));
+
+        // 추가 Math : 수학적인 상수와 함수를 위한 내장 객체
+
+        console.log(Math.PI); //파이값 3.14.....
+        console.log(Math.abs(-10)); // 절대값 표현
+
+
+        //round : 반올림 정수
+        console.log(Math.round(1.8));
+        console.log(Math.round(1.3));
+
+        //ceil : 특정 소수점 자리에서 올림 
+
+        // floor : 특정 소수점 자리에서 내림
+
+        console.log(Math.ceil(1.3));
+        console.log(Math.floor(1.9));
+
+        // random : 0~1까지 임의의 수를 생성 (0은 포함 , 1은 불포함)
+        
+        // max : 가장 큰 수 반환
+
+        console.log(Math.max(5,3,1,7,2));
+        console.log(Math.min(5,3,1,7,2));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>
