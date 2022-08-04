@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hide{
+            display: none;
+        }
+
+        .invaild{
+            border: 2px solid red;
+        }
+
+        #invaild{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Menu</h1>
+<div id="sub">설명</div>
+
+<hr>
+
+<!-- <button id="check" class="tab" name="checkName" onclick="showContent()">조회</button> -->
+<button id="check" class="tab" name="checkName">조회</button>
+<button id="transfer" class="tab">이체</button>
+
+<ul class="checkService hide">
+<li>계좌조회</li>
+<li>수표조회</li>
+<li>오픈뱅킹</li>
+</ul>
+
+<div id="content"></div>
+<div id="content2"></div>
+
+<h3>이메일</h3>
+<input type="email" name="email" id = "email">
+<div id="invaild"></div>
+<div id="output"></div>
+
+
+    <script>
+
+        const sub = document.getElementById('sub');
+        const check = document.querySelector('#check')
+        // step01 인라인 방식
+        // 조회 버튼 "클릭" -> div#content 문자열 출력
+        function showContent() {
+            document.querySelector('#content').innerHTML = "조회 서비스";
+
+        }
+
+        // step02 프로퍼티 방식
+        // check.onclick = function showContent() {
+        //     document.querySelector('#content').innerHTML = "조회 서비스";
+
+        // }
+        // check.onclick = function showContent() {
+        //     document.querySelector('#content2').innerHTML = "조회 서비스2";
+
+        // }
+        // 한계점이 있는데 같은 이벤트인 경우 중복 등록이 불가능해
+        // 조회 서비스는 출력이 안되고 조회 서비스 2만 출력된다.
+
+        // check.onmouseover = function test() {
+        //     console.log("test");
+        // }
+
+
+        // step03 addEventLisner
+
+        check.addEventListener('dblclick', () => {
+
+            document.querySelector('#content').innerHTML = "조회 서비스";
+
+        });
+
+
+        check.addEventListener('click', () => {
+
+            document.querySelector('#content2').innerHTML = "조회 서비스2";
+
+        });
+
+        // 이거는 동일한 이벤트인 경우에도 등록이 가능해 조회서비스와 조회 서비스2가 동시에 출력가능
+
+
+        // 이벤트
+        // MOUSE
+        // click, dblclick, mouseover, mouseup , mousedown .....
+
+
+        // ex
+        check. addEventListener('mousedown', function mousedown() {
+            console.log('mousedown');
+        })
+
+        // ex mouseover
+        // checkService -> 사라졌다가 보여지도록 지정
+        const checkService = document.querySelector('.checkService');
+        check.addEventListener('mouseover', function(){
+            console.log(checkService.classList);
+           checkService.classList.remove('hide');
+        });
+       
+        // mouse ?? 했을때 다시 hide가 동작하도록 하게 되는걸 찾아봐라
+
+
+        // Focus
+        // 이메일 입력값 ---> @ 포함이 되면 유요한 이메일
+
+        const email = document.getElementById('email');
+        const invaild = document.getElementById('invaild');
+        const output = document.getElementById('output');
+
+        // focus 기능을 등록 해보자
+
+        email.addEventListener('focus', function(){
+            email.style.background = 'gold';
+            if(this.classList.contains('invaild')) {
+                email.classList.remove('invaild')
+                invaild.innerHTML = '';
+
+            }
+        });
+
+        // blur
+        email.addEventListener('blur', function(){
+            if(!email.value.includes('@')){
+                email.classList.add('invaild');
+                invaild.innerHTML = '올바른 이메일 입력하세요';
+                output.innerHTML = '';
+            }
+            email.style.background = '';
+            output.innerHTML = '';
+
+        });
+
+    </script>
+    
+</body>
+</html>

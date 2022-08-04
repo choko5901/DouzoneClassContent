@@ -11,7 +11,24 @@
     <h1 id="title2" class = "font30">제목2</h1>
     <h1 id="title3" class = "font30">제목3</h1>
 
+    <!-- 노드 -->
+    <div id ="dom">
+        <h1>Plus-Minus</h1>
+        <div id="result">0</div>
+        <button id="btn-plus" class="btn">+1</button>
+        <button id="btn-minus" class="btn">+1</button>
+        
+    </div>
+
+
+
+
+
+
+    <div id = "aTag"></div>
+
     <script>
+        // https:deveoper.mozilla.org/ko/docs/web/API/Document
         // DOM : Document Object Model
         // HTML의 모든 요소를 객체로 만들어 사용하도록 여러 기능을 제공하는 모델
 
@@ -41,9 +58,107 @@
         // JS 에서는 -뒤에 글자가 대문자로 온다
         //  font-size 는 fontSize 이다
 
-        document.querySelector('.font30');
+        // document.querySelector('.font30');
         // 쿼리셀렉터는 한가지 요소 쿼리 설렉트 올은 여러가지
         //  쿼리 설렉터로 CSS 선택자들을 사용 가능하다 JS 에서
+
+        console.log(document.head)
+
+        // 요소(Element) 생성/추가/삭제/...
+        
+        const aTag = document.getElementById('aTag');
+        aTag.innerHTML = '<a href ="#">링크</a>'
+        // 보안에는 HTML 이 더 좋음
+        // aTag.innerText = '<a href ="#">링크</a>'
+
+
+        // createElement : 요소를 생성
+
+        const h3 = document.createElement('h3');
+
+        h3.innerHTML = 'title h3';
+        // 만들어진 h3 요소에 title h3 이라는 텍스트 추가
+
+        document.body.appendChild(h3);
+
+        // append 는 요소 추가 appendChild 는 자식 요소로 추가
+
+        // 속성(Attribute) 
+        h3.setAttribute('data-id', "test");
+        //관리자 모드 보면 속성값으로 data-id로 test가 들어 가 있음
+        //get, has도 자주 사용된다
+
+
+
+        // 텍스트
+
+        // innerHTML, innerText, textContent 등 텍스트 생성 방법이 있다
+
+        h3.textContent = "textContent";
+
+        //우리는 주로 innerHTML 을 사용 할 것이다
+
+        //Child
+
+        // appendChild(추가) / remove(삭제)
+        // append는 미리 요소가 생성이 되어 있어야 추가 삭제가 됨
+
+        // h3.replaceChild(para1,para2) 이 아이도 미리 만들어져 있어야 변경이됨
+        //  결과 값만 생각하면 para2를 para1으로 자식요소를 변경한다
+
+        // Node
+        // DOM 표준에 나와 있는 HTML의  모든 요소
+        // 1. 문서 노드 : document
+        // 2. 요소노드 : HTML 태그
+        // 3. 텍스트노드 : HTML 요소 내부의 텍스트
+        // 4. 속성노드 : HTML 속성 
+        // 5. 주석노드 : 주석
+        // 6. 루트노드 : HTML 태그
+        
+        // 노드는 관계를 가진다
+        // 1. 부모 / 조상(상위)
+        // 2. 자식 / 후손(하위) : first / last
+        // 3. 형제 / 자매
+
+        // console.log(document.childNodes);
+        // 전체 문서에서 자식 노드는 [<!DOCTYPE html>, html] 뿐이란 말임
+        // console.log(document.childNodes[1]);
+        // html 에 관한 내용만 나옴
+        
+        console.log(document.childNodes[1].childNodes);
+
+        // [head, text, body] 란 결과가 나왔다
+        // htmld 의 자식노드로 head랑 body가 있는건 알겠는데 text는멀까
+        // 헤드 종료 랑 body 시작 부분의 공백(띄어쓰기 줄바꿈 텝 등) 이 text로 읽힌다
+        // 붙여서 콘솔 찍으면 text가 사라짐
+        
+
+
+        const result = document.getElementById('result');
+        
+        console.log(result.previousElementSibling);
+        // 동등한 위치의 요소를 출력하는 것 result 이전 요소는 h1임
+
+        // HTML 요소를 가져올땐 HTML collection으로 가져오고
+        // Node로 들고갈땐 Node 리스트로 가져갔다
+        // 내가 HTML 요소를 선택했는지 Node 접근 했는지
+        // 지정 방법에 따라 사용가능한 메소드가 달라진다!!
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+
+
+
         
 
     </script>
