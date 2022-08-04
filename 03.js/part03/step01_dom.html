@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step01_dom.html</title>
+</head>
+<body>
+    <h1 id="title1" class = "font30">제목1</h1>
+    <h1 id="title2" class = "font30">제목2</h1>
+    <h1 id="title3" class = "font30">제목3</h1>
+
+    <script>
+        // DOM : Document Object Model
+        // HTML의 모든 요소를 객체로 만들어 사용하도록 여러 기능을 제공하는 모델
+
+        // document 객체
+
+        const title1 = document.getElementById('title1');
+
+        title1.style.color ="gold";
+
+        const titles = document.getElementsByTagName('h1');
+        
+        // 제목3 글자색을 토마토로 변경 
+        console.log(titles);
+
+        // 마치 배열처럼 인덱스 번호를 가지고 있는 것을 확인 할 수 있어
+        //  각 요소들에 접근이 가능하다
+
+        titles[2].style.color ="tomato";
+
+        const fonts = document.getElementsByClassName('font30');
+        
+        fonts[0].style.fontSize = '100px'
+        fonts[1].style.fontSize = '100px'
+        fonts[2].style.fontSize = '100px'
+       
+        // css 프로퍼티가 - 연결된걸 쓸때
+        // JS 에서는 -뒤에 글자가 대문자로 온다
+        //  font-size 는 fontSize 이다
+
+        document.querySelector('.font30');
+        // 쿼리셀렉터는 한가지 요소 쿼리 설렉트 올은 여러가지
+        //  쿼리 설렉터로 CSS 선택자들을 사용 가능하다 JS 에서
+        
+
+    </script>
+
+
+</body>
+</html>
