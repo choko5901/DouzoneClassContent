@@ -17,7 +17,7 @@
         #invaild{
             color: red;
         }
-
+        
     </style>
 </head>
 <body>
@@ -44,6 +44,17 @@
 <div id="invaild"></div>
 <div id="output"></div>
 
+<hr>
+<h3>대문자만 입력</h3>
+
+<div>
+
+    <label for="coupon">쿠폰 입력</label>
+    <input type="text" id ="coupon">
+
+    
+
+</div>
 
     <script>
 
@@ -141,6 +152,21 @@
             output.innerHTML = '';
 
         });
+
+
+
+        // key board 관련 이벤트
+        // key down, keyup, ....
+        
+
+        const coupon = document.getElementById('coupon');
+
+        coupon.addEventListener('keyup', () => {
+            console.log(coupon.value.toUpperCase());
+            coupon.value =coupon.value.toUpperCase();
+
+        });
+
 
     </script>
     

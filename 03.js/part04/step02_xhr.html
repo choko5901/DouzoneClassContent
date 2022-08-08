@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step02_xhr.html</title>
+</head>
+<body>
+    
+
+<script>
+
+// JSON : JavaScript Objevct Notation
+// 데이터를 문자열의 형태로 주고 받도록 만들어진 내장 객체
+
+
+const student = {
+
+    name : 'it',
+    age: 30,
+    courses: ['linus', 'html/css', 'js']
+}
+
+console.log*(student);
+
+
+//1, 프론트 -> 서버로 데이터 전송할 때
+//  2. 서버 -> 프론트로 데이터 전송할떄
+
+// ? : 문자열로 전송 하는 것이 메모리적으로도 효율
+//  stringfy : js 객체를 문자열로 변경
+
+
+let jsonStudent = JSON.stringify(student);
+
+console.log(jsonStudent);
+console.log(typeof jsonStudent);
+
+//  객체보다 문자열이 메모리가적어 문자열로 전달한다
+// 1. 프론트 /서버가 받은 데이터를 자신의 객체로 바꾸어
+// parse : 문자열을 JS  객체로 변경
+
+let newStudent = JSON.parse(jsonStudent);
+console.log(newStudent)
+
+
+//json 사용할 떄 Key 도 문자열로 변경 해야한다. !!!!
+// json을 사용할때 반듯이 "" 을 사용해야한다.
+
+let obj1 = {key1: 'v1'};
+let obj2 ="{'key2': 'v2'}"; 
+let obj3 ='{"key3": "v3"}'; 
+
+
+console.log(obj1.key1);
+
+
+// console.log(JSON.parse(obj2).key2);
+console.log(JSON.parse(obj3).key3);
+
+//  XMLHttpRequest : 다른 서버에 있는 정보를 요청하는데 있어 비동기로 데이터를 요청하고 받는 기능
+
+function ajaxTest() {
+
+    var xhr = new XMLHttpRequest();
+
+    // onreadystatechange 
+    //  client 와 server 간에 통신을 할때
+    //  중간 단계에 대한 변화를 감지하여 자동으로 실행되는 로직
+
+    // readystate 숫자로 표현
+    // 1 : 요청
+    // 2 : 요청 중
+    // 3 : 응답 중
+    // 4 : 응답 완료
+    
+    // status 200 정상 응답
+
+    xhr.onreadystatechange = function() {
+        // alert(this.readyState);
+       if(this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+
+       }
+        
+    }
+    // 실제 요청 (방식, 요청주소, 비동기요청 (true))
+    xhr.open("GET", "https://jsonplaceholder.typicode.com/users", true);
+    xhr.send();
+
+
+}
+
+ajaxTest();
+
+</script>
+
+
+
+
+
+</body>
+</html>

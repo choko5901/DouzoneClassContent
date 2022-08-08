@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            //  BOM : Browser Objcet Model
+            // winddow / location / document / history / screen / navigator
+
+            // document.write(window.outerHeight);
+            // document.write(window.self);
+            // 윈도우 브라우저 다양한 설정이 가능
+
+
+            // location
+
+            // location.hash
+            
+            // setTimeout(() => {
+            //     location.href="https://naver.com"
+            // }, 3000);
+
+            // 내가 설정한 밀리초 이후 동작을 해라 가 settimeout
+            // 위치는하이퍼링크로 네이버로 가라 라고 설정한거
+            
+            // location.reload();
+            // 새로 고침
+
+            // history
+
+            // document.write(history.length);
+            // history.go(1);
+
+            // history.back();
+
+            // navigator
+            // document.write(navigator.appName);
+            // document.write(navigator.onLine);
+            // document.write(navigator.language);
+            // document.write(navigator.userAgent);
+
+            const moble_keys = ['iPhone', 'iPad','Andriod','LG']
+            document.write(navigator.userAgent);
+
+            for(let i in moble_keys){
+
+                if(navigator.userAgent.match(moble_keys[i])){
+
+                    console.log("기록");
+                }
+
+            }
+
+            
+
+
+
+
+
+
+
+        </script>
+
+
+
+
+</body>
+</html>
