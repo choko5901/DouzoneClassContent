@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- dog_api -->
+
+    <button id= "fetch-dog-api">fetch</button>
+    <div id = "show_img">
+
+    </div>
+
+    <script>
+        const fetchBtn =document.getElementById('fetch-dog-api')
+        fetchBtn.addEventListener('click', () => {
+            
+            fetch("https://dog.ceo/api/breeds/image/random")
+            .then((response) =>response.json())
+            .then(data => { 
+                // createElement
+                const dogImg = document.createElement('img');
+                console.log(dogImg);
+               dogImg.src =data.message;
+               console.log(dogImg);
+               dogImg.style.width = '150px'
+
+                document.getElementById('show_img').appendChild(dogImg)
+
+            })
+           
+
+        });
+
+    </script>
+
+
+</body>
+</html>
