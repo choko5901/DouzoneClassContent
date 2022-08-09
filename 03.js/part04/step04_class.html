@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수형태로 객체 생성
+        // function Animal() {
+        //     this.name = name ;
+        //     this.speed = speed;
+
+        //     run =  function(speed) {
+        //         console.log(this.speed + "로 run() 실행")
+        //     }
+        
+        //     stop =  function(name) {
+        //         console.log(this.name + "이 멈춤 stop()")
+        //     }
+        
+        // }
+        
+
+        // class 로 객체 생성
+        // class 는 extends로 확장가능
+        class Animal {
+            // constructor 은 생성자 함수로 객체 생성시 , 프로퍼티 초기화 역할이다
+            constructor() {
+                this.name = name;
+                this.speed = 0;
+            }
+            //메소드
+            run(speed) {
+                console.log(this.speed + "로 run() 실행")
+            }
+
+            stop(name) {
+                console.log(this.name + "이 멈춤 stop()")
+            }
+        }
+
+
+
+
+        const animal = new Animal();
+
+        
+        // const cat = new Animal();
+        // new Animal은 동물의 공통된 기능의 객체인데 다른 속성들도 넣고 싶다
+        // 그러기 위해 클래스 형태로 Aniaml이라는 객체를 만들면된다
+        //extends를 이용해 확장 즉 상속기능이다 부모요소의 기능을 자식이 사용하는걸 말한다.
+
+        class Cat extends Animal {
+            sleep() {
+                console.log('12시간 이상 잠');
+
+            };
+        };
+
+    
+        const cat = new Cat("navi");
+        console.log(cat);
+        cat.sleep();
+        cat.run();
+        cat.stop();
+        
+    </script>
+
+
+</body>
+</html>

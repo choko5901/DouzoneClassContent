@@ -52,9 +52,9 @@
             
         // });
 
-        // console.log(1);//동기
-        // setTimeout(() => console.log(2), 10000); // 비동기 : 데이터 받아올때 등 사용
-        // console.log(3); //동기
+        console.log(1);//동기
+        setTimeout(() => console.log(2), 1000); // 비동기 : 데이터 받아올때 등 사용
+        console.log(3); //동기
 
         // 동기면 위에서 부터 아래 다 수행이 되어야 다음 껄 수행하는데
         //  비동기면 비동기가 진행 되는 와중에 다른 동작을 수행이 가능하다
@@ -127,16 +127,16 @@
 
         // 여기서 소비자는 then라 보면 된다/
 
-        // const promise = new Promise((resolve, reject) => {
-        //     setTimeout(() => {
-        //     // console.log('promise');
-        //     resolve('data');
-        //     // reject('error');
-        // },2000);
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+            // console.log('promise');
+            resolve('data');
+            reject('error');
+        },2000);
             
-        // });
+        });
 
-        // console.log(promise);
+        console.log(promise);
         // 요 위까지가 생산자이다.
 
         // 아래는 new 객체 생성이 아닌 함수로 프로미스 생성
