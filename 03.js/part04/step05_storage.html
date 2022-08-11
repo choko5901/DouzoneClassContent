@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step05_storage.html</title>
+</head>
+<body>
+    
+    <script>
+
+        //웹 스토리지(Web Storage)
+        // - 종류 : local / session
+        // - 구조 : key : value
+        // - 메소드
+        //      -setItem(k, v) : 데이터를 스토리지에 저장
+        //      -getItem(k) : 저장된 데이터를 반환
+        //      -removeItem(k) : 저장된 데이터를 삭제
+        //      -key(index) : 해당 인덱스에 저장된 키 반환
+        //      -length : 저장된 항목의 개수
+
+
+        // 스토리지 실습
+
+        localStorage.setItem('k1','v1');
+        // localStorage.setItem('k1','v11');
+        // 키는 여전히 보존 값만 바뀜
+
+        localStorage.setItem('k2','v2');
+
+
+        console.log(localStorage.getItem('k1'));
+        console.log(localStorage.k1);
+        
+        
+
+        // 데이터 출력
+        
+        for(let i = 0 ; i < localStorage.length; i++) {
+
+            console.log(localStorage.key(i));
+            let key = localStorage.key(i);
+
+            console.log(localStorage.getItem(key));
+
+        } 
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
