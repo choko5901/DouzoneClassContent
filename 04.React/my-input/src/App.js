@@ -7,6 +7,7 @@ import ListUser from './components/ListUser';
 import data from './db/mock.json'
 import Storage from './components/Storage';
 import axios from 'axios';
+import UpdateUser from './components/UpdateUser';
 
 
 
@@ -163,8 +164,86 @@ axios.get('https://choko5901.github.io/data/data.json')
       user.id !== id
     )));
 
-    
   }
+
+  // 수정- 상태관리
+  const [updateToggle, setUpdateToggle] = useState(false);
+
+  const onUpdateToggle = () => {
+
+    console.log('update');
+    setUpdateToggle(!updateToggle);
+  }
+
+  // 수정 - edit 버튼 클릭시 UpdateUser에 클릭한 User 정보(이름)를 관리하는
+  const [selectedUser, setSelectedUser] = useState(null);
+  
+// 수정 - 선택한 user의 상태를 변경하는 함수 
+ const onSelectUser = (user) => {
+  console.log(user)
+  setSelectedUser(user);
+ }
+
+
+ // 수정 - 실제 수정이 일어나는 기능
+ const onUpdate = (userId, newName) =>{
+
+  setUpdateToggle(!updateToggle);
+  // console.log('app: onupdating')
+  console.log(`App: onUpdate - ${userId}-${newName}`);
+
+  //실제 수정 로직
+  // 1) 이름 정보 수정 (UpdateUser) -화면에서 사라지게 만들기
+  // 2) 업데이트
+  // 2-1) 현재 전체 출력 데이터가 저장되는 객체는??? user
+  // 2-2) 찾았다면 userId 와 전체 출력 Id 와 동일하면 수정하자라는 로직 하셈
+  // map 찾고 3항연산자로 사용하면된다
+  // 2-3) 위의 조건으로 두값이 같다면 특정 객체의 name이 
+  //  파라미터로 넘겨져온 newName으로 변경
+
+  
+
+
+  // const test = users.map((data) => {
+  //     // console.log(data.id)
+  //     return data.id;
+  // })
+// console.log(test)
+// 미향님 _삼항 연산자
+  // setUsers(
+  //   users.map((data) => 
+      
+  //     (data.id == userId ? (
+  //       { 
+  //         id:data.id,
+  //         name:newName,
+  //         lastName: data.lastName
+  //       }
+  //     ) : data)
+  //   ));
+  
+  //경률님 _ if문
+  //setUsers(users.map((data)=>{
+    //   console.log(typeof user);
+    //   if(data.id===userId){
+    //     return {
+    //       id:data.id,
+    //       name:newName,
+    //       lastName:data.lastName
+    //     }
+    //   } return data;
+    // }));
+
+    //강사님 버전
+// setUsers(
+//   users.map((data)=> (userId === data.id ? {...data, name:newName} : data))
+// )
+
+  
+
+ }
+ 
+ 
 
   return (
     // step01
@@ -178,8 +257,16 @@ axios.get('https://choko5901.github.io/data/data.json')
       onChange = {onChange}
      onAdd = {onAdd}
     />
-    <ListUser users={users} onDelete={onDelete}/> 
+    <ListUser users={users}
+     onDelete={onDelete} 
+     onUpdateToggle={onUpdateToggle}
+     onSelectUser={onSelectUser}
+     /> 
    {/* 넘겨줄때 data에 변경 내용이 추가된 users를 넘겨줘야해  */}
+    
+    {updateToggle && <UpdateUser selectedUser={selectedUser} onUpdate={onUpdate}/>}
+    
+    
     </div>
     // <Storage/>
   );

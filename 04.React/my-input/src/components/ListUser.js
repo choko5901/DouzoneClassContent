@@ -1,6 +1,6 @@
-import React, { useReducer } from "react";
+import React from "react";
 
-function ListUser ({users, onDelete}) {
+function ListUser ({users, onDelete, onUpdateToggle, onSelectUser }) {
     console.log(users);
 
    
@@ -20,7 +20,10 @@ function ListUser ({users, onDelete}) {
                 <b>{user.name}</b> ------- <b>{user.lastName}</b>
                 
                 &nbsp;&nbsp;&nbsp; 
-                <button onClick={() => {onDelete(user.id)}} key={user.id}>삭제</button>
+                <button onClick={() => {onDelete(user.id)}} key={user.id}>del</button>
+                &nbsp;&nbsp;&nbsp; 
+                <button key={user.id + "edit-btn"} onClick={() => {onUpdateToggle(); onSelectUser(user)}}>edit</button>
+
             </div>
             )
 
