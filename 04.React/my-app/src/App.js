@@ -127,7 +127,7 @@ function App() {
 
 //<UseState3 />
 
-//<UseEffect/>
+<UseEffect/>
 //<div>
 //{showWork && <UseEffect2/>}
 //<button onClick={() =>{setShowWork(!showWork)}}>Click</button>
@@ -161,7 +161,7 @@ function App() {
 //<Parent>
  //   <Child/>
 //</Parent>
-<></>
+
   );
   
 
