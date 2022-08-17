@@ -27,6 +27,8 @@ import Parent from './components/Parent';
 import Child from './components/Child';
 import Page from './hooks/Usecontext/Page';
 import { ThemeContext } from './context/ThemeContext';
+import UseReducer from './hooks/useReducer/UseReducer';
+import UseReducer2 from './hooks/useReducer/UseReducer2';
 
 
 function App() {
@@ -46,20 +48,25 @@ function App() {
   // context
     const [isDark, setIsDark] =useState(false);
 
-    console.log(isDark)
+    // console.log(isDark)
   
   return (
-    <ThemeContext.Provider value={{isDark, setIsDark}}>
-      {/* ver1 */}
-    {/* <Page
+
+
+
+    <UseReducer2/>
+
+    // <ThemeContext.Provider value={{isDark, setIsDark}}>
+      /* ver1 */
+    /* <Page
       isDark= {isDark}
       setIsDark= {setIsDark}
-    /> */}
-    <Page/>
+    /> */
+    // <Page/>
 
 
     
-    </ThemeContext.Provider>
+    // </ThemeContext.Provider>
 
     //step01 컴포넌트 만들고 사용하기
     // <div className="App">

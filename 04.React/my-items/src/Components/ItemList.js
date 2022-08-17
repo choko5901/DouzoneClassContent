@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import LocaleContext, { useLocale } from "../contexts/LocaleContext";
+import useTranslator from "../hooks/useTranslator";
 
 
 function convertingDate(ms) {
@@ -34,6 +35,48 @@ function Item({item, onDelete}) {
 
     const locale = useLocale();
 
+    // 나의 버전
+    // const [language, setlanguage]=useState({
+    //     Delete: '',
+    //     Edit: ''}) 
+
+    // const Changelanguag = () => {
+    //     let changedObj = {
+    //         Delete: '',
+    //         Edit: ''
+    //     }
+        
+    //     if(locale === "kor"){
+    //         changedObj = {
+    //             Delete: '삭제',
+    //             Edit: '수정'
+            // }
+            // setlanguage({
+                //     Delete: '삭제',
+                //     Edit: '수정'
+                // }
+                // )
+        // }
+        // else
+        // {
+        //     changedObj = {
+        //         Delete: 'Delete',
+        //         Edit: 'Edit'
+        //     }
+                
+            // setlanguage({
+            //     Delete: 'Delete',
+            //     Edit: 'Edit'
+            // }) 
+    //     }
+    //     setlanguage(changedObj);
+    // }
+
+
+
+    const translator = useTranslator();
+    
+  
     return (
         <div>
 
@@ -42,8 +85,12 @@ function Item({item, onDelete}) {
             <div>{calorie}</div>
             <div>{content}</div>
             <div> {convertingDate(createdAt)}</div>
-            <button onClick={handleDelete}>삭제</button>
-            <button onClick={handleEdit}>수정</button>
+{/*             
+            <button onClick={handleDelete}>{locale === 'kor' ? '삭제' : 'Delete'}</button>
+            <button onClick={handleEdit} >{locale === 'kor' ? '수정' : 'Edit'} </button> */}
+            
+            <button onClick={handleDelete}>{translator('delete btn')}</button>
+            <button onClick={handleEdit}>{translator('edit btn')} </button>
             <p>{locale}</p>
         </div>
 
