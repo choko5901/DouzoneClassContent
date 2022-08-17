@@ -4,6 +4,10 @@ import mockItems from './db/mock.json';
 import ItemForm from './Components/ItemForm';
 import { useState } from 'react';
 import ItemList from './Components/ItemList';
+import LocaleSelect from './Components/LocaleSelect';
+import { LocaleProvider } from './contexts/LocaleContext';
+
+
 
 function App() {
   const[items, setItems] =useState(mockItems);
@@ -94,13 +98,19 @@ setItems((prevItems) => [newItem, ...prevItems]);
 
 
 
-
+  
 
   return (
+    // <LocaleContext.Provider value={locale}>
+    <LocaleProvider>
    <div>
     <ItemForm onSubmitData={handleInsert}/>
     <button name='createdAt' onClick={handleNewest}>최신순</button>
     <button name='calorie' onClick={handleCalorie}>칼로리순</button>
+    
+    <LocaleSelect  //value={locale} onChange={setLocale}
+    />
+
     <ItemList 
     // items={items}
 
@@ -111,6 +121,9 @@ setItems((prevItems) => [newItem, ...prevItems]);
     onDelete={handleDelete}
     />
    </div>
+   </LocaleProvider>
+
+  //</LocaleContext.Provider>
   );
 }
 

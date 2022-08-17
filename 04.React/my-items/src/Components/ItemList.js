@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import LocaleContext, { useLocale } from "../contexts/LocaleContext";
 
 
 function convertingDate(ms) {
@@ -29,6 +30,10 @@ function Item({item, onDelete}) {
         
     }
 
+    //context
+
+    const locale = useLocale();
+
     return (
         <div>
 
@@ -39,6 +44,7 @@ function Item({item, onDelete}) {
             <div> {convertingDate(createdAt)}</div>
             <button onClick={handleDelete}>삭제</button>
             <button onClick={handleEdit}>수정</button>
+            <p>{locale}</p>
         </div>
 
 
@@ -49,7 +55,7 @@ function Item({item, onDelete}) {
 
 
 function ItemList({items, onDelete}) {
-    console.log(items)
+    // console.log(items)
 
     return(
         <ul>

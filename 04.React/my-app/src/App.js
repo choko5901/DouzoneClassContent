@@ -25,6 +25,8 @@ import Rendering from './components/Rendering';
 import Controll from './components/Controll';
 import Parent from './components/Parent';
 import Child from './components/Child';
+import Page from './hooks/Usecontext/Page';
+import { ThemeContext } from './context/ThemeContext';
 
 
 function App() {
@@ -41,9 +43,24 @@ function App() {
   // useState
   const [showWork, setShowWork] = useState(false); 
 
+  // context
+    const [isDark, setIsDark] =useState(false);
 
+    console.log(isDark)
   
   return (
+    <ThemeContext.Provider value={{isDark, setIsDark}}>
+      {/* ver1 */}
+    {/* <Page
+      isDark= {isDark}
+      setIsDark= {setIsDark}
+    /> */}
+    <Page/>
+
+
+    
+    </ThemeContext.Provider>
+
     //step01 컴포넌트 만들고 사용하기
     // <div className="App">
       
@@ -127,7 +144,7 @@ function App() {
 
 //<UseState3 />
 
-<UseEffect/>
+//<UseEffect/>
 //<div>
 //{showWork && <UseEffect2/>}
 //<button onClick={() =>{setShowWork(!showWork)}}>Click</button>
