@@ -1,24 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+import Data from './db/FoodList.json';
+
+
 
 function App() {
+  const[items, setItems] = useState(Data);
+
+  console.log(items)
+
+  const render = items.map((item) =>
+  (item.구군=='해운대구') ? 
+  <li>
+    {item.구군}
+  </li>: false
+  )
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>{render}</div>
+   
   );
 }
 
