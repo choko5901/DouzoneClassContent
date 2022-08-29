@@ -1,11 +1,11 @@
-/* º¯¼ö
- * 1. ¸í¸í
- * 		- ½ÃÀÛÀº ¹®ÀÚ, $, _
- * 		- ´ë¼Ò¹®ÀÚ ±¸ºĞ
- * 		- Ã¹¹øÂ° ¹®ÀÚ´Â ¼Ò¹®ÀÚ ½ÃÀÛ
- * 		- °³¹ß½Ã ÀÇ¹ÌÀÖ´Â ÀÌ¸§À¸·Î ÁöÁ¤
- * 		- ´Ü¾î°¡ ÀÌ¾îÁö´Â °æ¿ì ´ë¹®ÀÚ·Î ±¸ºĞ
- * 		- ÀÚ¹Ù ¿¹¾à¾î´Â ÁÖÀÇ
+/* ë³€ìˆ˜
+ * 1. ëª…ëª…
+ * 		- ì‹œì‘ì€ ë¬¸ì, $, _
+ * 		- ëŒ€ì†Œë¬¸ì êµ¬ë¶„
+ * 		- ì²«ë²ˆì§¸ ë¬¸ìëŠ” ì†Œë¬¸ì ì‹œì‘
+ * 		- ê°œë°œì‹œ ì˜ë¯¸ìˆëŠ” ì´ë¦„ìœ¼ë¡œ ì§€ì •
+ * 		- ë‹¨ì–´ê°€ ì´ì–´ì§€ëŠ” ê²½ìš° ëŒ€ë¬¸ìë¡œ êµ¬ë¶„
+ * 		- ìë°” ì˜ˆì•½ì–´ëŠ” ì£¼ì˜
  * 		- https://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
  * 		- https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
  *
@@ -16,10 +16,10 @@ package step01;
 public class Ex01Variable {
 
 	public static void main(String[] args) {
-		// Ç×»ó ÀÚ¹Ù´Â Å¸ÀÔÀ» ÁöÁ¤ ÈÄ º¯¼ö¸í ¼±¾ğ ÈÄ °ª ÀÔ·Â
+		// í•­ìƒ ìë°”ëŠ” íƒ€ì…ì„ ì§€ì • í›„ ë³€ìˆ˜ëª… ì„ ì–¸ í›„ ê°’ ì…ë ¥
 		// Java Data types
 		
-		// Á¤¼ö
+		// ì •ìˆ˜
 		byte vb1 = -128;
 		
 //		byte vb2 = 128;
@@ -30,11 +30,11 @@ public class Ex01Variable {
 		
 		long vl1 = 1008;
 		
-		long vl2 = 10000000000L; //ÀÚ¹Ù´Â ±âÁØÀÌ intÀÌ±â ¶§¹®¿¡ ¼ıÀÚ µÚ¿¡ L ·Î longÀ¸·Î »ç¿ë
+		long vl2 = 10000000000L; //ìë°”ëŠ” ê¸°ì¤€ì´ intì´ê¸° ë•Œë¬¸ì— ìˆ«ì ë’¤ì— L ë¡œ longìœ¼ë¡œ ì‚¬ìš©
 		
 		
-		// ½Ç¼ö: float
-		float vf1 = 3.14f; //float µµ ½Ç¼öÀÇ ±âÁØÀº doubleÀÌ±â ¶§¹®¿¡ float·Î »ç¿ë ½Ã¿¡ f¸¦ ºÙ¿©Áà¶ó
+		// ì‹¤ìˆ˜: float
+		float vf1 = 3.14f; //float ë„ ì‹¤ìˆ˜ì˜ ê¸°ì¤€ì€ doubleì´ê¸° ë•Œë¬¸ì— floatë¡œ ì‚¬ìš© ì‹œì— fë¥¼ ë¶™ì—¬ì¤˜ë¼
 		
 		// * double
 		double vd1 = 3.14;
@@ -52,7 +52,7 @@ public class Ex01Variable {
 		System.out.println(vc3);
 		
 		
-		//³í¸® : boolean
+		//ë…¼ë¦¬ : boolean
 		
 		boolean isTrue =true;
 		boolean isFalse =false;

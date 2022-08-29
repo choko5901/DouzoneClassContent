@@ -1,46 +1,46 @@
-/* ÂüÁ¶ Å¸ÀÔ
- *  - ±âº» Å¸ÀÔÃ³·³ ½ÇÁ¦ µ¥ÀÌÅÍ °ªÀÌ ¾Æ´Ñ °´Ã¼ÀÇ ÁÖ¼Ò¸¦ ÂüÁ¶ÇÏ´Â Å¸ÀÔ
- *  - º¯¼ö ½ºÅÃ(stack), °´Ã¼ Èü(heap) ¿µ¿ª¿¡¼­ »ý¼º
- *  - ±âº» °ª : null
- *  	- ÂüÁ¶ÇÒ °´Ã¼°¡ ¾øÀ» °æ¿ì, NullPointerException ¹ß»ý
+/* ì°¸ì¡° íƒ€ìž…
+ *  - ê¸°ë³¸ íƒ€ìž…ì²˜ëŸ¼ ì‹¤ì œ ë°ì´í„° ê°’ì´ ì•„ë‹Œ ê°ì²´ì˜ ì£¼ì†Œë¥¼ ì°¸ì¡°í•˜ëŠ” íƒ€ìž…
+ *  - ë³€ìˆ˜ ìŠ¤íƒ(stack), ê°ì²´ íž™(heap) ì˜ì—­ì—ì„œ ìƒì„±
+ *  - ê¸°ë³¸ ê°’ : null
+ *  	- ì°¸ì¡°í•  ê°ì²´ê°€ ì—†ì„ ê²½ìš°, NullPointerException ë°œìƒ
  */
-/* Å¬·¡½º¿Í °´Ã¼
- *  - µ¥ÀÌÅÍ °ªÀ» ÀúÀå ¹× Á¦°ø
+/* í´ëž˜ìŠ¤ì™€ ê°ì²´
+ *  - ë°ì´í„° ê°’ì„ ì €ìž¥ ë° ì œê³µ
  *  
- *  - ¼³°è
- *   1. µ¥ÀÌÅÍ : name, age
- *   2. ±â´É : name, age ¹ÝÈ¯ / ´Ü¼ø Ãâ·Â
+ *  - ì„¤ê³„
+ *   1. ë°ì´í„° : name, age
+ *   2. ê¸°ëŠ¥ : name, age ë°˜í™˜ / ë‹¨ìˆœ ì¶œë ¥
  * 
- *  - °³¹ß
- *   1. µ¥ÀÌÅÍ ÀúÀå¿¡ ÇÊ¿äÇÑ ¸Þ¸ð¸®
- *   2. ±â´É ±¸º°, ¼öÇàÀ» À§ÇÑ ÄÚµå ÀÛ¼º
- *   	* °´Ã¼ »ý¼º
+ *  - ê°œë°œ
+ *   1. ë°ì´í„° ì €ìž¥ì— í•„ìš”í•œ ë©”ëª¨ë¦¬
+ *   2. ê¸°ëŠ¥ êµ¬ë³„, ìˆ˜í–‰ì„ ìœ„í•œ ì½”ë“œ ìž‘ì„±
+ *   	* ê°ì²´ ìƒì„±
  *   
- *  - Å¬·¡½º¸¦ °³¹ßÇÏ´Â °ÍÀÌ °´Ã¼¸¦ ¸¸µå´Â °ÍÀº ¾Æ´Ï´Ù
+ *  - í´ëž˜ìŠ¤ë¥¼ ê°œë°œí•˜ëŠ” ê²ƒì´ ê°ì²´ë¥¼ ë§Œë“œëŠ” ê²ƒì€ ì•„ë‹ˆë‹¤
  */
 
 
 package step02;
 
 public class Ex01People {
-	// ¸â¹ö º¯¼ö(ÇÊµå)¸¦ »ç¿ë class ¹Ø¿¡ »ç¿ë µÇ´Â °Í
+	// ë©¤ë²„ ë³€ìˆ˜(í•„ë“œ)ë¥¼ ì‚¬ìš© class ë°‘ì— ì‚¬ìš© ë˜ëŠ” ê²ƒ
 	
 	String name = "java";
 	int age = 26;
 	
-	// ±âº»»ý¼ºÀÚ
-	// - Å¬·¡½º¿¡ ¼±¾ðÇÏ´Â ¸Þ¼ÒµåÀÇ ÇÑ Á¾·ù
-	// - °´Ã¼ »ý¼º½Ã ÀÚµ¿À¸·Î È£Ãâ
-	// - Å¬·¡½ºÀÇ ÀÌ¸§°ú °°À½, Å¸ÀÔ x , ¹ÝÈ¯°ª x
-	// - °´Ã¼ »ý¼º ½Ã ÃÊ±âÈ­¸¦ À§ÇÔ
+	// ê¸°ë³¸ìƒì„±ìž
+	// - í´ëž˜ìŠ¤ì— ì„ ì–¸í•˜ëŠ” ë©”ì†Œë“œì˜ í•œ ì¢…ë¥˜
+	// - ê°ì²´ ìƒì„±ì‹œ ìžë™ìœ¼ë¡œ í˜¸ì¶œ
+	// - í´ëž˜ìŠ¤ì˜ ì´ë¦„ê³¼ ê°™ìŒ, íƒ€ìž… x , ë°˜í™˜ê°’ x
+	// - ê°ì²´ ìƒì„± ì‹œ ì´ˆê¸°í™”ë¥¼ ìœ„í•¨
 	
 	
 	Ex01People() {};
 	
-	// ¸Þ¼Òµå
-	// ÀÌ¸§ ¹ÝÈ¯ ¸Þ¼Òµå
-	// - ±â´É : ÀÌ¸§ ¹ÝÈ¯(return)
-	// - ¸Þ¼Òµå¸í: getName
+	// ë©”ì†Œë“œ
+	// ì´ë¦„ ë°˜í™˜ ë©”ì†Œë“œ
+	// - ê¸°ëŠ¥ : ì´ë¦„ ë°˜í™˜(return)
+	// - ë©”ì†Œë“œëª…: getName
 	
 	String getName() {
 		return name;
@@ -49,22 +49,22 @@ public class Ex01People {
 		return age;
 	}
 	
-	//return ¾ø´Ù¸é ??
+	//return ì—†ë‹¤ë©´ ??
 	
 	void printInfo() {
-		System.out.println("¾Æ¹«³»¿ë ¾ø´Ù¸£");
+		System.out.println("ì•„ë¬´ë‚´ìš© ì—†ë‹¤ë¥´");
 		System.out.println(age + " " + name);
 	}
-	// ¹«Á¶°Ç ÀÚ¹Ù´Â µ¥ÀÌÅÍ Å¸ÀÔÀ» ½á¾ßÇÑ´Ù ¾Æ¹«¸® ¾Æ¹« ±â´ÉÀÌ ¾ø´õ¶óµµ ¾Æ¹«±â´É ¾ø´Â void Å¸ÀÔÀ» ½á¾ßÇÔ
+	// ë¬´ì¡°ê±´ ìžë°”ëŠ” ë°ì´í„° íƒ€ìž…ì„ ì¨ì•¼í•œë‹¤ ì•„ë¬´ë¦¬ ì•„ë¬´ ê¸°ëŠ¥ì´ ì—†ë”ë¼ë„ ì•„ë¬´ê¸°ëŠ¥ ì—†ëŠ” void íƒ€ìž…ì„ ì¨ì•¼í•¨
 	
-	// main ¸Þ¼Òµå: ÇÁ·Î±×·¥ÀÇ ½ÃÀÛÁ¡ !
+	// main ë©”ì†Œë“œ: í”„ë¡œê·¸ëž¨ì˜ ì‹œìž‘ì  !
 	public static void main(String[] args) {
 		Ex01People ppl1 = new Ex01People();
 		System.out.println(ppl1.name);
 		System.out.println(ppl1.age);
 		System.out.println(ppl1.getName());
 		System.out.println(ppl1.getAge());
-		// !!! print ÇÔ¼ö ³»ºÎ¿¡¼­ ¶Ç ´Ù¸¥ print ÇÔ¼ö È£Ãâ X 
+		// !!! print í•¨ìˆ˜ ë‚´ë¶€ì—ì„œ ë˜ ë‹¤ë¥¸ print í•¨ìˆ˜ í˜¸ì¶œ X 
 //		System.out.println(ppl1.printInfo());
 		ppl1.printInfo();
 

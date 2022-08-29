@@ -1,68 +1,68 @@
 // condition
-/* Á¶°Ç¹®(Condition) : ÁÖ¾îÁø Á¶°ÇÀÌ ÂüÀÏ °æ¿ì, ÁÖ¾îÁø ±â´É ¼öÇà
-1. if¹®
-	- ¹®¹ý
-		if(Á¶°Ç½Ä) {
-			¼öÇà ÄÚµå;
+/* ì¡°ê±´ë¬¸(Condition) : ì£¼ì–´ì§„ ì¡°ê±´ì´ ì°¸ì¼ ê²½ìš°, ì£¼ì–´ì§„ ê¸°ëŠ¥ ìˆ˜í–‰
+1. ifë¬¸
+	- ë¬¸ë²•
+		if(ì¡°ê±´ì‹) {
+			ìˆ˜í–‰ ì½”ë“œ;
 			...
-		}else if(Á¶°Ç½Ä){
-			¼öÇà ÄÚµå;
+		}else if(ì¡°ê±´ì‹){
+			ìˆ˜í–‰ ì½”ë“œ;
 			...
 		}else {
-			¼öÇà ÄÚµå;
+			ìˆ˜í–‰ ì½”ë“œ;
 		}
 	
-	- Á¾·ù
-		1. if : Á¶°ÇÀÌ ÇÏ³ªÀÎ °æ¿ì
-		2. if -else : Á¶°ÇÀÌ ÇÏ³ª, Á¶°ÇÀÌ °ÅÁþ -> else ºí·°ÀÇ ÄÚµå°¡ ½ÇÇà
-		3. if -else if -else... : Á¶°ÇÀÌ ¿©·¯°³
+	- ì¢…ë¥˜
+		1. if : ì¡°ê±´ì´ í•˜ë‚˜ì¸ ê²½ìš°
+		2. if -else : ì¡°ê±´ì´ í•˜ë‚˜, ì¡°ê±´ì´ ê±°ì§“ -> else ë¸”ëŸ­ì˜ ì½”ë“œê°€ ì‹¤í–‰
+		3. if -else if -else... : ì¡°ê±´ì´ ì—¬ëŸ¬ê°œ
 		
-2. switch/case¹® : º¯¼ö °ª¿¡ µû¶ó ¼öÇàÄÚµå °áÁ¤
-	- ¹®¹ý
-		switch(º¯¼ö°ª){
-			case ÀÔ·Â°ª1:
-				¼öÇà ÄÚµå;
-			case ÀÔ·Â°ª2:
-				¼öÇà ÄÚµå;
+2. switch/caseë¬¸ : ë³€ìˆ˜ ê°’ì— ë”°ë¼ ìˆ˜í–‰ì½”ë“œ ê²°ì •
+	- ë¬¸ë²•
+		switch(ë³€ìˆ˜ê°’){
+			case ìž…ë ¥ê°’1:
+				ìˆ˜í–‰ ì½”ë“œ;
+			case ìž…ë ¥ê°’2:
+				ìˆ˜í–‰ ì½”ë“œ;
 			
 			...
 		
 			default:
-				¼öÇà ÄÚµå;
+				ìˆ˜í–‰ ì½”ë“œ;
 		}
  */
 
-/*¹Ýº¹¹®(Loop)
-1. for¹® : ¹Ýº¹ È½¼ö°¡ Á¤È®ÇÒ ¶§
-	- ±¸Á¶
-		for(º¯¼ö ¼±¾ð°ú ÃÊ±âÈ­; Á¶°Ç½Ä; Áõ°¨½Ä){
-			¼öÇà ÄÚµå;
+/*ë°˜ë³µë¬¸(Loop)
+1. forë¬¸ : ë°˜ë³µ íšŸìˆ˜ê°€ ì •í™•í•  ë•Œ
+	- êµ¬ì¡°
+		for(ë³€ìˆ˜ ì„ ì–¸ê³¼ ì´ˆê¸°í™”; ì¡°ê±´ì‹; ì¦ê°ì‹){
+			ìˆ˜í–‰ ì½”ë“œ;
 			...
 		}
 		
-	- Á¾·ù
-		1. ±âº» for¹®
-		2. for Each¹®
-			for(Å¸ÀÔ º¯¼ö : µ¥ÀÌÅÍ ÀúÀå°´Ã¼){
-				¼öÇà ÄÚµå;
+	- ì¢…ë¥˜
+		1. ê¸°ë³¸ forë¬¸
+		2. for Eachë¬¸
+			for(íƒ€ìž… ë³€ìˆ˜ : ë°ì´í„° ì €ìž¥ê°ì²´){
+				ìˆ˜í–‰ ì½”ë“œ;
 				...
 			}
 			
-2. while¹® : ¹Ýº¹ È½¼ö°¡ ºÒ¸íÈ® ¶Ç´Â ¹«ÇÑ
-	- ±¸Á¶
-		ÃÊ±â½Ä;
-		while(Á¶°Ç½Ä){
-			¼öÇà ÄÚµå;
+2. whileë¬¸ : ë°˜ë³µ íšŸìˆ˜ê°€ ë¶ˆëª…í™• ë˜ëŠ” ë¬´í•œ
+	- êµ¬ì¡°
+		ì´ˆê¸°ì‹;
+		while(ì¡°ê±´ì‹){
+			ìˆ˜í–‰ ì½”ë“œ;
 			...
-			Áõ°¨½Ä;
+			ì¦ê°ì‹;
 		}
 
-3. do ~ while¹® : ¹Ýº¹ Á¶°Ç °ËÁõÀü ÇÑ¹ø ½ÇÇàÈÄ, while¹®
-	- ±¸Á¶
-		ÃÊ±â½Ä;
+3. do ~ whileë¬¸ : ë°˜ë³µ ì¡°ê±´ ê²€ì¦ì „ í•œë²ˆ ì‹¤í–‰í›„, whileë¬¸
+	- êµ¬ì¡°
+		ì´ˆê¸°ì‹;
 		do{
-			½ÇÇà ·ÎÁ÷, Áõ°¨½Ä;
-		}while¹®(Á¶°Ç½Ä);
+			ì‹¤í–‰ ë¡œì§, ì¦ê°ì‹;
+		}whileë¬¸(ì¡°ê±´ì‹);
 
  */
 
@@ -72,28 +72,28 @@ public class Ex03ControlFlow {
 
 	public static void main(String[] args) {
 		
-		// Á¶°Ç¹®
-		// id°¡ admin °æ¿ì , Á¢¼Ó ¼º°ø ¹®ÀÚ¿­ Ãâ·Â
+		// ì¡°ê±´ë¬¸
+		// idê°€ admin ê²½ìš° , ì ‘ì† ì„±ê³µ ë¬¸ìžì—´ ì¶œë ¥
 		String id = "admin";
 		
 		if(id.equals("admin")) {
-			System.out.println("Á¢¼Ó ¼º°ø");
+			System.out.println("ì ‘ì† ì„±ê³µ");
 			
 		}
 		else {
-			System.out.println("Á¢¼Ó ½ÇÆÐ");
+			System.out.println("ì ‘ì† ì‹¤íŒ¨");
 			
 		}
 		
-		// ¹Ýº¹¹®
+		// ë°˜ë³µë¬¸
 		// 1~10
-		System.out.println("for¹®");
+		System.out.println("forë¬¸");
 
 		for(int i = 0; i < 11; i++) {
 			System.out.println(i);
 		}
 		
-		// 10~1 ±îÁö Ãâ·Â
+		// 10~1 ê¹Œì§€ ì¶œë ¥
 		
 		for(int i = 10; i > 0; i--) {
 			System.out.println(i);
@@ -101,7 +101,7 @@ public class Ex03ControlFlow {
 		
 		
 		// while 1~10
-		System.out.println("while¹®");
+		System.out.println("whileë¬¸");
 		int i =1;
 		while ( i <=10) {
 			System.out.println(i);

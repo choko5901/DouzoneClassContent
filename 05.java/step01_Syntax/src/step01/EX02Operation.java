@@ -4,9 +4,9 @@ public class EX02Operation {
 
 	public static void main(String[] args) {
 		// Ex03Operation.java
-//		 ¼ıÀÚ ¿¬»ê
-//		 ±âº» ¿¬»ê : +, -, *, /, %
-		System.out.println("===±âº»¿¬»ê===");
+//		 ìˆ«ì ì—°ì‚°
+//		 ê¸°ë³¸ ì—°ì‚° : +, -, *, /, %
+		System.out.println("===ê¸°ë³¸ì—°ì‚°===");
 		int v1 = 10;
 		int v2 = 3;
 		
@@ -16,16 +16,16 @@ public class EX02Operation {
 //		System.out.println(v1 / v2);
 //		System.out.println(v1 % v2);
 		
-		// Áõ°¨ ¿¬»ê : ++, --
-		System.out.println("===Áõ°¨¿¬»ê===");
+		// ì¦ê° ì—°ì‚° : ++, --
+		System.out.println("===ì¦ê°ì—°ì‚°===");
 //		System.out.println(v1);
 //		System.out.println(v1++);
 //		System.out.println(v1);
 //		System.out.println(++v1);
 //		System.out.println(v1);
 		
-		// 3.33.... À¸·Î Ãâ·Â?
-		// Å¸ÀÔº¯È¯ÀÌ ÇÊ¿äÇÏ´Ù --> Wrapper Class
+		// 3.33.... ìœ¼ë¡œ ì¶œë ¥?
+		// íƒ€ì…ë³€í™˜ì´ í•„ìš”í•˜ë‹¤ --> Wrapper Class
 		
 //		System.out.println(v1/(float)v2);
 
@@ -36,35 +36,35 @@ public class EX02Operation {
 		// % 0.0 : NaN
 		
 		
-//		// ³í¸® ¿¬»ê : &&, ||, ^, !
-		System.out.println("===³í¸®¿¬»ê===");
+//		// ë…¼ë¦¬ ì—°ì‚° : &&, ||, ^, !
+		System.out.println("===ë…¼ë¦¬ì—°ì‚°===");
 		boolean t = true;
 		boolean f = false;
 		
-		// && : ¸ğµç ¿¬»êÀÚ°¡ true¶ó¸é °á°úµµ true
+		// && : ëª¨ë“  ì—°ì‚°ìê°€ trueë¼ë©´ ê²°ê³¼ë„ true
 //		System.out.println(t & t);
 //		System.out.println(f & f);
 //		System.out.println(t & f);
 //		System.out.println(f && t);
 		
-		// || : ¿¬»êÀÚÁß ÇÏ³ª¸¸ true¶óµµ °á°ú´Â true
+		// || : ì—°ì‚°ìì¤‘ í•˜ë‚˜ë§Œ trueë¼ë„ ê²°ê³¼ëŠ” true
 //		System.out.println(t || t);
 //		System.out.println(f || f);
 //		System.out.println(t || f);
 //		System.out.println(f || t);
 		
-		// ^ : ¿¬»êÀÚ ÇÏ³ª´Â true, ´Ù¸¥ ÇÏ³ª´Â falseÀÏ¶§ °á°ú´Â true
+		// ^ : ì—°ì‚°ì í•˜ë‚˜ëŠ” true, ë‹¤ë¥¸ í•˜ë‚˜ëŠ” falseì¼ë•Œ ê²°ê³¼ëŠ” true
 		System.out.println(t ^ t);
 		System.out.println(f ^ f);
 		System.out.println(t ^ f);
 		System.out.println(f ^ t);
 		
-		// ! : ³í¸®°ªÀ» º¯°æ (t -> f, f -> t)
+		// ! : ë…¼ë¦¬ê°’ì„ ë³€ê²½ (t -> f, f -> t)
 //		System.out.println(f);
 //		System.out.println(!f);
 		
-		// ºñ±³¿¬»ê : <, >, <=, >=, ==, !=
-		System.out.println("===ºñ±³¿¬»ê===");
+		// ë¹„êµì—°ì‚° : <, >, <=, >=, ==, !=
+		System.out.println("===ë¹„êµì—°ì‚°===");
 		int num1 = 1;
 		int num2 = 10;
 //		System.out.println(num1 == num2);
@@ -73,8 +73,8 @@ public class EX02Operation {
 //		double num3 = 1.0;
 //		System.out.println(num1 == num3);
 		
-		// ´ëÀÔ¿¬»ê : =, +=, -=, ...
-		System.out.println("===´ëÀÔ¿¬»ê===");
+		// ëŒ€ì…ì—°ì‚° : =, +=, -=, ...
+		System.out.println("===ëŒ€ì…ì—°ì‚°===");
 //		int assign = 0;
 //		System.out.println(assign);
 //		assign += 10;
@@ -86,35 +86,35 @@ public class EX02Operation {
 		
 		
 		
-		// ¹®ÀÚ !== ¹®ÀÚ¿­ ÀÓ
-		// ¹®ÀÚ´Â '' ·Î ÇÏ³ªÀÇ ¹®ÀÚ¸¸ »ç¿ë ¹®ÀÚ¿­Àº "" ·Î ¿©·¯ ¹®ÀÚ »ç¿ë
-		// ¹®ÀÚ¿­(String) ¿¬»ê
+		// ë¬¸ì !== ë¬¸ìì—´ ì„
+		// ë¬¸ìëŠ” '' ë¡œ í•˜ë‚˜ì˜ ë¬¸ìë§Œ ì‚¬ìš© ë¬¸ìì—´ì€ "" ë¡œ ì—¬ëŸ¬ ë¬¸ì ì‚¬ìš©
+		// ë¬¸ìì—´(String) ì—°ì‚°
 		
 		
-		String str1 = "¹®ÀÚ¿­ ¿¬»ê1";
-		String str2 = "¹®ÀÚ¿­ ¿¬»ê1";
-		String str3 = new String("¹®ÀÚ¿­ ¿¬»ê1");
-		// ÀÚ¹Ù¿¡¼­´Â ¹®ÀÚ¿­ ¿¬»êÀº µ¡¼À ¸»°í´Â ¾ÈµÈ´Ù
+		String str1 = "ë¬¸ìì—´ ì—°ì‚°1";
+		String str2 = "ë¬¸ìì—´ ì—°ì‚°1";
+		String str3 = new String("ë¬¸ìì—´ ì—°ì‚°1");
+		// ìë°”ì—ì„œëŠ” ë¬¸ìì—´ ì—°ì‚°ì€ ë§ì…ˆ ë§ê³ ëŠ” ì•ˆëœë‹¤
 		System.out.println(str1 +" "+ str2 + " " + str3);
 
 		
-		// ¹®ÀÚ¿­ ºñ±³ ¿¬»êÀÚ
+		// ë¬¸ìì—´ ë¹„êµ ì—°ì‚°ì
 		System.out.println(str1 == str2);
 		System.out.println(str1 == str3);
-		// ¿Ö 2¹ø¤Š´Â false ÀÏ±î == ´Â °´Ã¼ Á¾·ù±îÁö (°´Ã¼ ÁÖ¼Ò ) ºñ±³ ÇÏ±â ¶§¹®ÀÌ´Ù 
+		// ì™œ 2ë²ˆ?ëŠ” false ì¼ê¹Œ == ëŠ” ê°ì²´ ì¢…ë¥˜ê¹Œì§€ (ê°ì²´ ì£¼ì†Œ ) ë¹„êµ í•˜ê¸° ë•Œë¬¸ì´ë‹¤ 
 		
-		// equals : °´Ã¼ µ¥ÀÌÅÍ°ª¸¸ ºñ±³
+		// equals : ê°ì²´ ë°ì´í„°ê°’ë§Œ ë¹„êµ
 		
 		System.out.println(str1.equals(str2));
 		System.out.println(str1.equals(str3));
 		
-		// »ïÇ× ¿¬»ê
+		// ì‚¼í•­ ì—°ì‚°
 		
 		
-		// ºñÆ®¿¬»ê
+		// ë¹„íŠ¸ì—°ì‚°
 		// <<, >> , >>>
-		// a << b : Á¤¼ö  a¸¦  b ºñÆ® ¼ö ¸¸Å­ ÀÚ¸® ÀÌµ¿ ÈÄ  ºó °÷Àº 0 Ã¤¿öÁø ¼ıÀÚ ¿¬»ê
-		// ÀÌ¹ÌÁö ÀÖÀ½
+		// a << b : ì •ìˆ˜  aë¥¼  b ë¹„íŠ¸ ìˆ˜ ë§Œí¼ ìë¦¬ ì´ë™ í›„  ë¹ˆ ê³³ì€ 0 ì±„ì›Œì§„ ìˆ«ì ì—°ì‚°
+		// ì´ë¯¸ì§€ ìˆìŒ
 		//16
 //		System.out.println(2 << 3);
 		// 0
@@ -123,19 +123,19 @@ public class EX02Operation {
 		// |, &, ^, ~
 		// 00000010 //00010010
 
-		// & °°Àº À§Ä¡ÀÇ ºñÆ®°ªÀÌ 1ÀÏ¶§¸¸ 1·Î Ãâ·Â
+		// & ê°™ì€ ìœ„ì¹˜ì˜ ë¹„íŠ¸ê°’ì´ 1ì¼ë•Œë§Œ 1ë¡œ ì¶œë ¥
 		System.out.println(2 & 18);
 		
-		// | °¢ ºñÆ®ÀÚ¸® Áß ÇÏ³ª¶óµµ 1ÀÌ¸é 1·Î Ãâ·Â
+		// | ê° ë¹„íŠ¸ìë¦¬ ì¤‘ í•˜ë‚˜ë¼ë„ 1ì´ë©´ 1ë¡œ ì¶œë ¥
 		System.out.println(2 | 18);
-		// ^ °¢ ºñÆ® ÀÚ¸®°¡ 0,0 ÀÌ³ª 1,1ÀÌ ¾Æ´Ò¶§¸¸ 1·Î Ãâ·Â
+		// ^ ê° ë¹„íŠ¸ ìë¦¬ê°€ 0,0 ì´ë‚˜ 1,1ì´ ì•„ë‹ë•Œë§Œ 1ë¡œ ì¶œë ¥
 		System.out.println(2 ^ 18);
 		
 		// ~
 		System.out.println(~25);
 		
 		// 00011001
-		// º¸¼ö¹ı À» »ı°¢ ÇØº¾½Ã´Ù¿ë
+		// ë³´ìˆ˜ë²• ì„ ìƒê° í•´ë´…ì‹œë‹¤ìš©
 		// 11100110 
 		
 		

@@ -1,9 +1,9 @@
 package step02;
 
 class People {
-	// ¸â¹ö º¯¼ö
-	// ¸â¹ö º¯¼ö´Â people ÀÌ¶ó´Â °´Ã¼°¡ »ç¿ëÇÒ º¯¼ö ¸íÄ¡°ú ÇüÀ» Á¤ÇØ ³õ°í
-	// »ý¼ºÀÚ ÇÔ¼ö·Î ÆÄ¶ó¹ÌÅÍ·Î °¢°¢ Á¤ÀÇ µÈ ÇüÅÂ·Î ºÒ·¯¿Í ¹Þ¾Æ¼­(¶óÀÎ 21¹øÂ°ÁÙ) PeopleÀÌ ¹Þ¾Æ ¾´´Ù 
+	// ë©¤ë²„ ë³€ìˆ˜
+	// ë©¤ë²„ ë³€ìˆ˜ëŠ” people ì´ë¼ëŠ” ê°ì²´ê°€ ì‚¬ìš©í•  ë³€ìˆ˜ ëª…ì¹˜ê³¼ í˜•ì„ ì •í•´ ë†“ê³ 
+	// ìƒì„±ìž í•¨ìˆ˜ë¡œ íŒŒë¼ë¯¸í„°ë¡œ ê°ê° ì •ì˜ ëœ í˜•íƒœë¡œ ë¶ˆëŸ¬ì™€ ë°›ì•„ì„œ(ë¼ì¸ 21ë²ˆì§¸ì¤„) Peopleì´ ë°›ì•„ ì“´ë‹¤ 
 //	String name = "java";
 //	int age = 26;
 	
@@ -11,22 +11,22 @@ class People {
 	int age;
 	char test;
 	
-	//±âº»»ý¼ºÀÚ -> »ç¿ëÀÚ Á¤ÀÇ »ý¼ºÀÚ°¡ ÀÖ´Â °æ¿ì¿¡´Â ¹Ýµå½Ã °³¹ßÀÚ°¡ ÁöÁ¤ÇØÁà¾ß ¿¡·¯°¡ ¾È³­´Ù
+	//ê¸°ë³¸ìƒì„±ìž -> ì‚¬ìš©ìž ì •ì˜ ìƒì„±ìžê°€ ìžˆëŠ” ê²½ìš°ì—ëŠ” ë°˜ë“œì‹œ ê°œë°œìžê°€ ì§€ì •í•´ì¤˜ì•¼ ì—ëŸ¬ê°€ ì•ˆë‚œë‹¤
 	
 	People() {} 
 //	
 	
 	
-	// »ç¿ëÀÚ Á¤ÀÇ »ý¼ºÀÚ
-	//ÀÌ¶§ ÆÄ¶ó¹ÌÅÍ °ªÀ¸·Î ÇüÅÂ¸¦ Á¤ÀÇÇÏ´Â°Ç ÀÏ´Ü ÃÖÈÄ¿¡ ¸É¹öÇÔ¼ö¿¡ ¸Â°Ô ¹Þ´Â °Å°í ±×¿Ü¿¡µµ 
-	// °´Ã¼ »ý¼º½Ã ÆÄ¶ó¹ÌÅÍÀÇ ÇüÅÂ¸¦ Á¤ÇØÁÖ´Â ¿ªÇÒ 2°¡ÁöÀÌ´Ù
+	// ì‚¬ìš©ìž ì •ì˜ ìƒì„±ìž
+	//ì´ë•Œ íŒŒë¼ë¯¸í„° ê°’ìœ¼ë¡œ í˜•íƒœë¥¼ ì •ì˜í•˜ëŠ”ê±´ ì¼ë‹¨ ìµœí›„ì— ë§´ë²„í•¨ìˆ˜ì— ë§žê²Œ ë°›ëŠ” ê±°ê³  ê·¸ì™¸ì—ë„ 
+	// ê°ì²´ ìƒì„±ì‹œ íŒŒë¼ë¯¸í„°ì˜ í˜•íƒœë¥¼ ì •í•´ì£¼ëŠ” ì—­í•  2ê°€ì§€ì´ë‹¤
 	People(String name, int age){
 		this.name = name;
 		this.age = age;
 	}
 	
 	
-	//¸Þ¼Òµå
+	//ë©”ì†Œë“œ
 	String getName() {
 		return name;
 	}
@@ -40,7 +40,7 @@ class People {
 		
 		this.age = age;
 		}else {
-			System.out.println("ÁöÁ¤ÇÑ ³ªÀÌ·Î ¾÷µ¥ÀÌÆ® ºÒ°¡");
+			System.out.println("ì§€ì •í•œ ë‚˜ì´ë¡œ ì—…ë°ì´íŠ¸ ë¶ˆê°€");
 		}
 					
 }
@@ -59,19 +59,19 @@ public class Ex02People {
 		System.out.println(ppl1.name);
 		System.out.println(ppl1.age);
 		System.out.println(ppl1.test);
-//		 ±âº» »ý¼ºÀÚ »ý·« µÇ¾îÀÖÀ¸¸é ÀÚµ¿À¸·Î Ãâ·Â µÊ
+//		 ê¸°ë³¸ ìƒì„±ìž ìƒëžµ ë˜ì–´ìžˆìœ¼ë©´ ìžë™ìœ¼ë¡œ ì¶œë ¥ ë¨
 		
-		// step01 : ÃÊ±â°ªÀ» °®°í ÀÖ´Â »óÅÂÀÇ °´Ã¼ »ý¼º -- »ç¿ëÀÚ Á¤ÀÇ »ý¼ºÀÚ°¡ ²À ÇÊ¼ö
+		// step01 : ì´ˆê¸°ê°’ì„ ê°–ê³  ìžˆëŠ” ìƒíƒœì˜ ê°ì²´ ìƒì„± -- ì‚¬ìš©ìž ì •ì˜ ìƒì„±ìžê°€ ê¼­ í•„ìˆ˜
 		People ppl2 = new People("apple", 30);
 		System.out.println(ppl2.getName());
 		System.out.println(ppl2.getAge());
 		
-		// step02 °´Ã¼ÀÇ µ¥ÀÌÅÍ º¸È£ --> set ÇÔ¼ö¸¦ ÀÌ¿ë
+		// step02 ê°ì²´ì˜ ë°ì´í„° ë³´í˜¸ --> set í•¨ìˆ˜ë¥¼ ì´ìš©
 		
 		People ppl3 = new People("google", 20);
-//		ppl3.age = -10 ;  º»·¡ µé¾î°¡¼­´Â ¾ÈµÇ´Â µ¥ÀÌÅÍ ÀÌ¹Ç·Î º¸È£ ÇÊ¿ä
+//		ppl3.age = -10 ;  ë³¸ëž˜ ë“¤ì–´ê°€ì„œëŠ” ì•ˆë˜ëŠ” ë°ì´í„° ì´ë¯€ë¡œ ë³´í˜¸ í•„ìš”
 		
-		// ? setAge ¸Þ¼Òµå »ý¼º: »õ·Î¿î ³ªÀÌ¸¦ ÁöÁ¤ , ´Ü À½¼ö´Â ÁöÁ¤ µÇÁö ¾Êµµ·Ï !
+		// ? setAge ë©”ì†Œë“œ ìƒì„±: ìƒˆë¡œìš´ ë‚˜ì´ë¥¼ ì§€ì • , ë‹¨ ìŒìˆ˜ëŠ” ì§€ì • ë˜ì§€ ì•Šë„ë¡ !
 		ppl3.setAge(40);
 		
 		System.out.println(ppl3.getAge());
