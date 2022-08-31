@@ -29,6 +29,15 @@ import Page from './hooks/Usecontext/Page';
 import { ThemeContext } from './context/ThemeContext';
 import UseReducer from './hooks/useReducer/UseReducer';
 import UseReducer2 from './hooks/useReducer/UseReducer2';
+import Redux from './redux/Redux';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+
+
+
+// redux
+
+
 
 
 function App() {
@@ -49,12 +58,56 @@ function App() {
     const [isDark, setIsDark] =useState(false);
 
     // console.log(isDark)
+
+    
+    
+    
+    function reducer(state, action) {
+
+      switch (action.type) {
+
+        case 'add':
+            return state + 1 ;
+
+        default:
+            return state;
+
+
+      }
+
+
+
+
+
+
+      console.log(state);
+      console.log(action);
+      return state;
+    
+      
+      
+    
+    }
+    
+    
+    
+    const store = createStore(reducer, 0,
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+      );
+
   
+
+
+
+
+
   return (
+  
 
-
-
-    <UseReducer2/>
+    <Provider store={store}> 
+        <Redux />
+    </Provider>
+    
 
     // <ThemeContext.Provider value={{isDark, setIsDark}}>
       /* ver1 */
