@@ -27,7 +27,7 @@ public class Child extends Parent{
 	public Child() {
 		System.out.println("자식 생성자");	
 	}
-	//메소드 오버라이딩 부모의 메소드의 파라미터 형태와 내용과 argument list 가 같으면 자식의 메소드를 사용하는 것을 오버라이딩 이라한다.
+	//메소드 오버라이딩 부모의 메소드의 파라미터 형태와 내용과 argument(파라미터 갯수) list 가 같으면 자식의 메소드를 사용하는 것을 오버라이딩 이라한다.
 	void printInfo() {
 //		System.out.println(name);
 //		System.out.println(age);
