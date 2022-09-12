@@ -1,0 +1,141 @@
+-- 6.subQuery.sql
+-- 문법 : 비교 연산자(대소비교, 동등비교) 오른쪽에 () 안에 select문 작성 
+-- 실행순서 : 서브쿼리가 메인 쿼리보다 먼저 실행 !
+-- 참고: JOIN 동일한 결과값
+
+-- 1. SMITH라는 직원 부서명 검색
+select deptno
+from emp
+where ename = 'smith';
+
+select dname
+from dept
+where DEPTNO = 20;
+
+-- ?join
+select e.ename , d.dname
+from emp as e , dept as d
+where e.ename = 'smith' and e.deptno = d.DEPTNO;
+
+-- ?서브쿼리(일반 서브쿼리 - where 절에서 사용) 먼저 시행
+select d.dname
+from dept as d
+where d.DEPTNO = (select deptno
+from emp
+where ename = 'smith');
+
+-- 2. SMITH와 동일한 직급(job)을 가진 사원들의 모든 정보검색(SMITH 포함)
+select *
+from emp as a
+where a.job = (select b.job from emp as b where b.ENAME='smith');
+
+select c.*
+from emp as e , emp as c
+where e.ename = 'smith' and e.job = c.job;
+-- 메인쿼리에 있는 컬럼을 서브쿼리에서는 사용 할 수 있다
+-- 하지만 서브쿼리에 있는 컬럼을 메인쿼리에서는 사용 할 수 없다
+
+
+-- 3. SMITH와 급여가 동일하거나 더 많은(>=) 사원명과 급여 검색
+-- SMITH 제외해서 검색하기
+
+
+-- 4. DALLAS에 근무하는 사원의 이름, 부서 번호 검색
+			
+
+-- 5. 평균 급여보다 더 많이 받는(>) 사원만 검색
+
+select ename
+from emp
+where SAl > avg(sal); -- 에러발생
+
+-- where 절에는 그룹 함수를 사용할수 없어 sum avg 등등등 서브 쿼리를 사용해야한다
+select e.ename
+from emp as e
+where e.SAL > (select avg(sal) from emp);
+
+
+
+
+
+-- 다중행 서브 쿼리(sub query의 결과값이 하나 이상)
+-- 6.급여가 3000이상 사원이 소속된 부서에 속한  사원이름, 급여 검색
+-- 급여가 3000이상 사원의 부서 번호
+-- in 연산자 안에 있는 서브쿼리
+select ename, sal, deptno
+from emp
+where sal >= 3000;
+
+
+select ename, sal, deptno
+from emp
+where deptno in (select ename, sal, deptno
+				from emp
+				where sal >= 3000);
+
+
+-- 7. in 연산자를 이용하여 부서별로 가장 급여를 많이 받는 사원의 정보(사번, 사원명, 급여, 부서번호) 검색
+	-- 사번, 사원명, 급여, 부서번호 
+
+	
+	-- 부서별로 가장 급여를 많이 받는 사원
+
+	
+	-- 결과를 부서번호 내림차순 정렬
+select empno, ename, sal, deptno
+from emp
+where  SAL in (select Max(sal) from emp group by DEPTNO)
+order by DEPTNO desc;
+
+-- 8. 직급(job)이 MANAGER인 사람이 속한 부서의 부서 번호와 부서명(dname)과 지역검색(loc)
+select DEPTNO
+from emp
+where job ='manager';
+
+select deptno, dname, loc
+from dept
+where DEPTNO in ( select DEPTNO
+					from emp
+					where job ='manager');
+                    
+select d.deptno, d.dname, d.loc
+from dept as d , emp as e
+where e.job= "manager" and e.DEPTNO = d.DEPTNO;
+
+
+
+-- 조인 VS 서브쿼리
+-- 서브쿼리가 조인에 비해 쿼리코스트가 더들어 일반적으로 조인이 최적화가 더 되어 있다
+
+
+-- 서브쿼리를 조인으로 대체할 수 없는 경우
+-- 1. group by 를 사용한 서브쿼리가 from 절에 있을 때
+-- 2. 서브쿼리가 집계된 하나의 값을 반환하고, 그 값을 where절에서 외부의 쿼리와 비교 할때 
+-- 3. 서브쿼리가 ALL 연산자 안에 들어가는 경우 
+
+-- UNION
+/*
+여러개의 select 결과 값을 하나의 테이블 혹은 집합으로 표현
+! 중복되는 데이터는 제거 
+! 선택한 필드(컬럼)의 개수 , 타입 , 순서는 같아야한다 
+! ALL를 붙이게 되면 중복 되는 데이터 제거 기능 을 없앰 그냥 붙음
+*/
+select ename
+from emp
+union
+select deptno
+from dept;
+
+select ename
+from emp
+union all
+select deptno
+from dept;
+
+select ename
+from emp
+union all
+select ename
+from emp;
+
+

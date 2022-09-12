@@ -1,0 +1,235 @@
+-- 4.selectGroupFunction.sql
+-- 그룹함수란? 
+
+
+/* 기본 문법
+1. select절
+2. from 절
+3. where절
+
+ * 그룹함수시 사용되는 문법
+1. select절 : 검색하고자 하는 속성
+2. from절	: 검색 table
+3. group by 절 : 특정 조건별 그룹화하고자 하는 속성
+4. having 절 : 그룹함수 사용시 조건절
+5. order by절 : 검색된 데이터를 정렬
+
+* 실행 순서 : from -> where -> select -> group -> having절 -> order
+*/
+
+-- 1. count() : 개수 확인 함수
+-- emp table의 직원이 몇명?
+SELECT COUNT(*)
+FROM EMP;
+
+-- ? comm 받는 직원 수만 검색 
+select count(comm)
+from emp;
+
+
+-- 2. sum() : 합계 함수
+-- ? 모든 사원의 월급여(sal)의 합
+select sum(sal)
+from emp;
+
+-- ? 모든 직원이 받는 comm 합
+select sum(comm)
+from emp;
+-- ?  MANAGER인 직원들의  월급여의 합 
+select sum(sal)
+from emp
+where job='manager';
+
+
+-- ? job 종류 counting[절대 중복 불가 = distinct]
+-- 데이터 job 확인
+select distinct job
+from emp;
+
+select count(distinct job)
+from emp;
+
+-- 3. avg() : 평균
+-- ? emp table의 모든 직원들의 급여 평균 검색
+SELECT AVG(sal)
+from emp;
+
+
+-- ? 커미션 받는 사원수, 총 커미션 합, 평균 구하기
+select count(comm), sum(comm), avg(comm)
+from emp;
+
+
+-- 4. max(), min() : 최대값, 최소값
+-- 숫자, date 타입에 사용 가능
+-- 최대 급여, 최소 급여 검색
+select max(sal), min(sal)
+from emp;
+
+
+-- ? 최근 입사한 사원의 입사일과, 가장 오래된 사원의 입사일 검색
+-- max(), min() 함수 사용해 보기
+select max(HIREDATE), min(HIREDATE)
+from emp;
+
+-- 오늘로부터 입사한지 가장 오래된 일수 계산?
+
+SELECT DATEDIFF(SYSDATE(), min(hiredate)) AS 최대일, DATEDIFF(SYSDATE(), max(hiredate)) AS 최소일
+from emp;
+
+select MAX(timestampdiff(day, hiredate, sysdate())), MIN(timestampdiff(day, hiredate, sysdate()))
+from emp;
+
+
+-- *** 
+/* group by절
+- 특정 컬럼값을 기준으로 그룹화
+	가령, 10번 부서끼리, 20번 부서끼리..
+*/
+
+-- 부서별 커미션 받는 사원수 
+SELECT COUNT(comm)
+from emp
+where DEPTNO = 30;
+
+-- step01 : 완성된 기본 문장
+select DEPTNO, count(comm)
+from emp
+group by DEPTNO;
+
+-- TEST : COUNT에 포함되어 있는 사원번호도 같이 출력하고 싶다면?
+SELECT  *
+from dept;
+
+SELECT EMPNO, DEPTNO, count(comm)
+from emp
+group by DEPTNO;
+/*
+ EMPNO -12행 / DEPTNO -4행 이지만 그룹바이에 포함된 건 3행 / COUNT(COMM) 3행
+*/
+-- step02 : deptno라는 부서 번호를 오름차순으로 정렬
+SELECT DEPTNO, count(comm)
+from emp
+group by DEPTNO
+order by DEPTNO desc;
+
+
+SELECT DEPTNO, count(comm) AS 인원
+from emp
+group by DEPTNO
+order by 인원 desc;
+
+/*
+group by를 사용할 때에는 group by절에 명시한 컬럼만 SELECT절에 사용한다.!
+*/
+
+
+-- step03 : 사원명도 검색
+-- ? 부서별(group by deptno) (월급여) 평균 구함(avg())
+select DEPTNO, avg(sal)
+from emp
+group by DEPTNO;
+
+-- ? 소속 부서별 급여 총액과 평균 급여 검색[deptno 오름차순 정렬]
+select DEPTNO, avg(sal), sum(sal)
+from emp
+group by DEPTNO
+order by DEPTNO asc;
+
+
+-- ? 소속 부서별 최대 급여와 최소 급여 검색[deptno 오름차순 정렬]
+-- 컬럼명 별칭에 여백 포함한 문구를 사용하기 위해서는 쌍따옴표로만 처리
+select DEPTNO, max(sal), min(sal) AS "최 소"
+from emp
+group by DEPTNO
+order by DEPTNO asc;
+
+
+
+
+-- *** having절 *** [ 조건을 주고 검색하기 ]
+-- 그룹함수 사용시 조건문
+
+-- 1. ? 부서별(group by) 사원의 수(count(*))와 커미션(count(comm)) 받는 사원의 수
+select DEPTNO, count(*) AS 사원수 , count(comm) AS 커미션받는사원수
+from emp
+group by DEPTNO;
+
+
+-- 조건 추가
+-- 2. ? 부서별 그룹을 지은후(group by deptno), 
+-- 부서별 평균 급여(avg())가 2000 이상인 부서의 번호와 평균 급여 검색 
+select DEPTNO, AVG(sal)
+from emp
+group by DEPTNO;
+
+
+-- step01 : having 절 연습
+select DEPTNO, AVG(sal) as 평균급여
+from emp
+group by DEPTNO
+having 평균급여 >=2000;
+-- select 절이 having 절보다 먼저 일어나니 having절에 별칭으로도 검색 가능한거임
+
+
+
+-- step02 : deptno 로 정렬
+select DEPTNO, AVG(sal) as 평균급여
+from emp
+group by DEPTNO
+order by DEPTNO asc;
+
+
+
+-- step03 : avg(sal) 평균급여라는 별칭 부여, 평균 급여로 정렬
+
+
+
+
+-- 3. 부서별 급여중 최대값(max)과 최소값(min)을 구하되 최대 급여가 2900이상(having)인 부서만 출력
+select DEPTNO, max(sal), min(sal)
+from emp
+group by DEPTNO
+having max(sal) >= 2900;
+
+
+
+-- rollup : 중간 합계 with rollup구문 사용되는
+SELECT SUM(SAL * 12)
+FROM EMP
+GROUP BY DEPTNO;
+
+SELECT SUM(SAL * 12)
+FROM EMP
+GROUP BY DEPTNO
+with rollup;
+
+-- Q1. 직업별 평균급여를 구하고 평균급여가 높은 순으로 나열하기
+select job, avg(sal) as 평균급여
+from emp
+group by job
+order by 평균급여 desc;
+
+-- Q2. 직업이 manager인 사원중 가장 급여를 적게 받는 사원의 사번 , 이름, 직업, 급여 , 부서 번호 출력하기
+select empno, ename, job, sal, deptno
+from emp
+where sal = (select min(sal) from emp where job = 'manager');
+
+
+
+-- Q3. loc이 CHICAGO 이고 직업이 MANAGER인 사람 중에서 급여가 큰 순으로 사번 사원명  loc  급여 출력
+
+select e.empno, e.ename, e.job, d.loc, e.sal
+from emp as e , dept as d
+where d.loc = 'CHICAGO' and e.job ='manager' and d.DEPTNO=e.DEPTNO
+order by SAL desc;
+
+
+select *
+from dept;
+
+select deptno, job
+from emp
+where job = 'manager';
+
+

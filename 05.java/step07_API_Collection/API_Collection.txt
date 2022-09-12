@@ -1,0 +1,54 @@
+step07_API_Collection
+
+1.롬복Lombok
+	- https://projectlombok.org/
+	- jar(Java Archive) 파일 IDE 폴더에 다운로드 
+		- 'java -jar lombok.jar'
+		- Specify 로 IDE 선택 
+		- Install/Update 버튼 클릭
+		- Quit Installer 버튼 클릭
+		- IDE 종료 후 재실행
+		
+		- 프로젝트 우클릭 - Build-path
+		- Ex Jar Library - 해당 Lombok.jar 선택
+		
+	- @어노테이션 기반으로 반복되는 소스 코드를 컴파일 과정에서 생성해주는 라이브러리
+	- @NoArgsConstructor, @AllArgsConstructor
+	- @Data
+	
+2.컬렉션 프레임 워크
+	- https://docs.oracle.com/javase/8/docs/technotes/guides/collections/reference.html
+	- 프로그램 구현에 필요한 자료구조(Data Structure)를 구현한 JDK 라이브러리
+	- java.util 패키지에 구현
+	- 최적화된 알고리즘을 사용하며, 개발 소요 시간 절약 가능
+	
+	- Collection 인터페이스
+		- 하위에 List, Set 인터페이스 존재
+		
+		- List 인터페이스
+		 	- 객체를 순서에 따라 저장하고 관리
+		 	- 자료구조 리스트의 구현을 위한 인터페이스
+		 	- 중복 허용
+		 	- ArrayList, Vector, LinkedList...
+				
+				- ArrayList 
+					- 내부 배열에 객체를 저장하여 인덱스로 관리
+					- 초기 크기 생성시 지정 가능
+				
+				- LinkedList
+					- Node가 Data와 Poniter를 가지고 한 줄로 연결되어 있는 자료 구조
+					- 각 Node들은 연결, 포인터는 노드의 연결을 담당
+					- 데이터 변경시 인덱스가 변경되는 것이 아니라 node 참조 링크 주소만 변경하여 관리
+					- 초기 크기 생성시 지정 불가능
+				 	
+				 	
+		 - Set 인터페이스
+		 	- 유일한 값을 관리
+		 	- 저장된 순서와 출력 순서 다를 수 있음
+		 	- HashTree, TreeSet, ...
+		 	- ex. 아이디, 주민번호 등 고유한 값에 적용
+		 	
+		 - Map 인터페이스
+		 	- Key : Value 로 이루어진 객체 관리
+		 	- Key 중복 불가능
+		 	- HashTable, HashMap, TreeMap, ...

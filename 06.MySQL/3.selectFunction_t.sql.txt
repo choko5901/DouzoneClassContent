@@ -1,0 +1,208 @@
+-- 3.selectFunction.sql
+-- 단일행 함수 : 입력 데이터 수만큼 출력 데이터
+
+-- 만약 쿼리로 오늘 날짜를 출력하고 싶다면? sysdate라는 함수 사용하면 됨
+-- 그런데 sysdate는 특정 테이블의 컬럼이 아님
+
+
+-- *** [숫자함수] ***
+-- 1. 절대값 구하는 함수 : abs()
+
+
+-- 2. 반올림 구하는 함수 : round(데이터 [, 반올림자릿수]) //반올림자릿수가 -1면 1의 자리 숫자에서 반올림
+SELECT 34.25, ROUND(34.25);
+SELECT ROUND(34.2598), ROUND(34.2598,1);
+SELECT ROUND(34.2598), ROUND(34.2598,-1);
+
+
+-- 3. 지정한 자리수 이하 버리는 함수 : truncate() 반드시 버림할 자리수를 지정 해줘야한다
+SELECT TRUNCATE(34.25,1);
+
+-- 4. 나누고 난 나머지 값 연산 함수 : mod()
+-- 모듈러스 연산자, % 표기로 연산
+SELECT MOD(10,3);
+
+
+-- 5. ? emp table에서 사번이 홀수인 사원의 이름, 사번 검색 
+SELECT ENAME , EMPNO
+FROM EMP
+WHERE MOD(EMPNO,2) = 1;
+
+
+
+
+-- 6. 제곱수 구하는 함수 : power(X,Y) => X^Y
+SELECT POWER(2,3);
+
+
+-- *** [문자함수] ***
+SELECT 'AbCd' ,UPPER('AbCd'),LOWER('AbCd');
+-- 1. 문자열 길이 체크함수 : length(바이트 길이) / char_length(실제 문자열 길이)
+-- mysql 기본 영어 1byte, 한글은 2byte(euckr)
+SELECT 'ABC', LENGTH('ABC'), LENGTH('ㄱㄴㄷ');
+SELECT 'ABC', CHAR_LENGTH('ABC'), CHAR_LENGTH('ㄱㄴㄷ');
+-- TEST
+SELECT LENGTH(CONVERT('ㄱㄴㄷ' USING 'EUCKR')) AS 'EUC-KR',
+LENGTH(CONVERT('ㄱㄴㄷ' USING 'UTF8')) AS 'UTF-8';
+
+
+
+-- 2. byte 수 체크 함수 : length()
+
+
+-- 3. 문자열 일부 추출 함수 : substr()
+-- 서브스트링 : 하나의 문자열에서 일부 언어 발췌하는 로직의 표현
+-- substr(데이터, 시작위치, 추출할 개수)
+SELECT SUBSTR('ABCD',2,3);
+-- 데이터 베이스에서 시작위치는 1이다 언어와 다르게
+
+ 
+
+
+-- 4. ? 년도 구분없이 2월에 입사한 사원이름, 입사일 검색
+SELECT ENAME, HIREDATE
+FROM EMP
+WHERE SUBSTR(HIREDATE,6,2)='02';
+
+-- 5. 문자열 앞뒤의 잉여 여백 제거 함수 : trim()
+
+SELECT '	ABC ',LENGTH('	ABC '), LENGTH(TRIM('	ABC '));
+
+
+
+-- *** [날짜 함수] ***
+-- 1. ?어제, 오늘, 내일 날짜 검색 
+SELECT SYSDATE();
+SELECT NOW();
+
+SELECT NOW(), SLEEP(3), NOW();
+SELECT SYSDATE(), SLEEP(3), SYSDATE();
+
+-- 처음과 시작의 끝 시각 기록이 동일하다는 가정을 한다면 ㅣ--> NOW
+-- 중간 중간 조회 시각 또는 시점을 확인 해야 한다면 --> SYSDATE();
+
+
+-- 뒷부분에서 진행하기
+-- 2.?emp table에서 근무일수 계산하기, 사번과 근무일수(반올림) 검색
+
+SELECT SYSDATE() - HIREDATE
+FROM EMP;
+
+-- 3. 특정 개월수 더하는 함수 : date_add(), adddate()
+-- 6개월 이후 검색 
+-- ADDDATE(기준일 , 얼마나 떨어질지)
+SELECT SYSDATE(), ADDDATE(SYSDATE(), INTERVAL 6 MONTH);
+SELECT SYSDATE(), DATE_ADD(SYSDATE(), INTERVAL 6 MONTH);
+
+
+-- 4. ? 입사일 이후 3개월 지난 일수 검색
+SELECT HIREDATE, ADDDATE(HIREDATE, INTERVAL 3 MONTH)
+FROM EMP;
+
+-- 5. 두 날짜 사이의 개월수 검색 : datediff(day1, day2)
+-- -오늘을 기준으로 2016-09-19
+-- 결과 앞 기준 - 뒷 기준 날짜 
+SELECT DATEDIFF(SYSDATE(), '2016-09-19');
+SELECT TIMESTAMPDIFF(DAY, '2016-09-19', SYSDATE());
+SELECT TIMESTAMPDIFF(MONTH, '2016-09-19', SYSDATE());
+SELECT TIMESTAMPDIFF(YEAR, '2016-09-19', SYSDATE());
+-- ?emp table에서 근무일수 계산하기, 사번과 근무일수(반올림) 검색
+SELECT ENAME, timestampdiff(DAY, HIREDATE,SYSDATE())
+from emp;
+
+-- 6. 주어진 날짜를 기준으로 해당 달의 가장 마지막 날짜 : last_day()
+select last_day(SYSDATE());
+
+-- ? 2016년 2월의 마지막 날짜는?
+select LAST_DAY('2016-02-01');
+
+
+-- 
+
+SELECT DAYOFWEEK(SYSDATE());
+-- 1 : 일 ~ 7 : 토
+SELECT DAYNAME(SYSDATE());
+-- 실제 요일 이름 출력
+
+
+-- *** [형변환 함수] ***
+-- 사용 빈도가 높음
+-- [1] date_format : 날짜 -> 문자, 숫자 -> 문자
+-- [2] str_to_date : 날짜로 변경 시키는 함수
+-- [3] cast : 문자열을 숫자로 변환
+	
+-- [1] date_format()
+-- 1. 오늘 날짜를 'yyyy-mm-dd' 변환 : 
+SELECT DATE_FORMAT(NOW(), '%Y-%M-%d');
+
+
+
+-- %Y	년도 - Year(4자리 표기)
+-- %y	년도 (뒤에 2자리 표기)
+-- %M	월 - 월 이름(January ~ December)
+-- %m	월 - 월 숫자(00 ~ 12)
+-- %d	일(00 ~ 31)
+-- %H	시간 24시간(00 ~ 23)
+-- %h	시간 12시간(00 ~ 12)
+-- %i	분 (00 ~ 59)
+-- %s	초 (00 ~ 59)
+
+-- ? 2.날짜의 round(), truncate()
+SELECT SYSDATE(), TRUNCATE(SYSDATE(), 0);
+-- ROUND : 정오 기준으로 이 시간 초과시에는 무조건 다음 날짜
+-- TRUNCATE : 24시간 내의 모든 당일 서비스 처리
+
+
+-- 3. 숫자를 문자형으로 변환 : cast, convert
+-- cast(값 as 데이터형식[길이])
+-- convert(변환하고싶은 데이터, 데이터형식[(길이)])​
+/* 
+BINARY 		-- 이진 데이터 
+CHAR 		-- 문자열 타입 
+DATA 		-- 날짜 
+DATATIME 	-- 날짜, 시간 동시에 
+DECIMAL 	-- 소수점 까지 
+JSON 		-- JSON 타입 SIGEND 
+INTEGER 	-- 부호 (음수,양수) 있는 정수형 
+TIME 		-- 시간 UNSIGNED INTEGER 양수만 정수형
+*/
+
+SELECT CAST(1 AS CHAR(1)); 
+-- 숫자 1이 아닌 CHAR타입의 1으로 출력된다
+
+-- [2] str_to_date() : 날짜로 변경 시키는 함수
+SELECT STR_TO_DATE('20220905', '%Y%m%d');
+-- 날자들 사이에 하이푼이나 슬러쉬 이런거 적어두면 안된다
+
+
+-- [3] cast() : 문자열을 숫자로 변환
+SELECT CAST('1' AS UNSIGNED);
+
+
+/* 조건문 */
+
+-- IFNULL
+-- IF (조건문 , 참일때 값 , 거짓일때의 값)
+
+SELECT IF( 2 > 1, 'TRUE', 'FALSE');
+
+-- IFNULL -> IF??
+-- SELECT IF(COLUM_NAME IS NULL, 0, COLUMN_NAME);
+
+-- ISNULL(COLUMN_NAME, VALUE)
+-- NULL 이라면 VAlUE값을 출력
+-- NULL 아니라면 본래 COLUMN의 값을 출력한다!
+
+-- CASE ~ WHEN
+SELECT
+	CASE
+		WHEN CUSTOMER_ID = 'A01'
+		THEN 'ADMIN'
+        WHEN CUSTOMER_ID = 'B01'
+        THEN 'MANAGER'
+        ELSE 'USER'
+END
+
+
+
+
