@@ -14,7 +14,7 @@ import blood.transfusion.view.RunningEndView;
 
 public class BTController {
 	private static BTController instance = new BTController();
-	private BTService service = BTService.getInstance();
+	private static BTService service = BTService.getInstance();
 	
 	private BTController() {}
 	
@@ -61,10 +61,28 @@ public class BTController {
 	}
 	
 	// 특정 프로젝트 업데이트
-	
+	 public static void updateProject(String btProjectId, String btProjectContent) {
+		try {
+			service.updateBTProject(btProjectId, btProjectContent);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NotExistException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	// 특정 프로젝트 삭제
-	
+	public static void deleteProject(String btProjectId) {
+		try {
+			service.deleteBTProject(btProjectId);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (NotExistException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	// 모든 헌혈자 검색 로직
 	public static ArrayList<DonorDTO> getAllDonors(){

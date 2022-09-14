@@ -26,6 +26,13 @@ public class BTService {
 		}
 	}
 	
+	public void notExistBTProject2(String btProjectId) throws NotExistException, SQLException{
+		BTProjectDTO btProject = BTProjectDAO.getBTProjectId(btProjectId);
+		if(btProject == null){
+			throw new NotExistException("검색하신 수혈 정보가 없습니다.");
+		}
+	}
+	
 	//모든 BTProject 정보 반환
 	public ArrayList<BTProjectDTO> getAllBTProjects() throws SQLException{
 		return BTProjectDAO.getAllBTProjects();
@@ -51,14 +58,13 @@ public class BTService {
 	
 	//기존 BTProject 수정
 	public boolean updateBTProject(String btProjectId, String btProjectContent) throws SQLException, NotExistException{
-		notExistBTProject(btProjectContent);
-		return false;
+		notExistBTProject2(btProjectId);
+		return BTProjectDAO.updateBTProject(btProjectId, btProjectContent);
 	}
-	
 	//BTProject 삭제
 	public boolean deleteBTProject(String btProjectId) throws SQLException, NotExistException{
-		notExistBTProject(btProjectId);
-		return false;
+		notExistBTProject2(btProjectId);
+		return BTProjectDAO.deleteBTProject(btProjectId);
 	}
 	
 	

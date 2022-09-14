@@ -1,0 +1,17 @@
+[학습]
+I/O Input/Output
+
+
+문자스트림
+https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html
+https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html
+
+바이트스트림
+https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html
+https://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html
+
+입력 스트림
+FileInputStream, FileReader, BufferInputStream, BufferReader 등
+
+출력 스트림
+FileOutputStream, FileWriter, BufferOutputStream, BufferWriter 등
