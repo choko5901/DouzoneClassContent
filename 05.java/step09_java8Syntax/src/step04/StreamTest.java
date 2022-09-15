@@ -225,10 +225,13 @@ public class StreamTest {
 				
 				Stream<Person> stream99 = personList.stream();
 				
-				stream99.forEach(pe -> System.out.println("이름: " +  pe.getName() + " mbti:" + pe.getMbti()));
+				//Person :: getName 는 Person 객체가 가지고 있는 getName 매소드를 참조 해 하나씩 꺼내겠다 라는 뜻임
+				stream99.sorted(Comparator.comparing(Person :: getName)).forEach(pe -> System.out.println("이름: " +  pe.getName() + " mbti:" + pe.getMbti()));
+				
+				
 				
 				// i, j 인사람 출력
-				Stream<Person> stream100 = personList.stream().filter(v -> v.getMbti().startsWith("i") && v.getMbti().endsWith("j"));
+				Stream<Person> stream100 = personList.stream().filter(v -> v.getMbti().contains("i") && v.getMbti().contains("j"));
 				System.out.println("======================================");
 				System.out.println("i, j 인 사람 출력");
 				stream100.forEach(x -> System.out.println("이름: " +  x.getName() + " \nmbti: " + x.getMbti()));
