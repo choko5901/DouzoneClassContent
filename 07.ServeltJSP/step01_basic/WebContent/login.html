@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>login.html</title>
+</head>
+<body>
+	<h2>Login</h2>
+	<!-- id/pw 입력 양식(폼) : form - inputs -> submit 
+	
+	http://localhost:8080/step01_basic/login.html
+	http://localhost:8080/step01_basic/check
+	
+	http://localhost:8080/step01_basic/check?id=it&pw=it1234
+	
+	
+	-->
+	<form action="check" method="post">
+		id: <input type="text" name="id" placeholder="ID 입력"/> <br/>
+		pw: <input type="password" name="pw" placeholder="PW 입력"/> <br/>
+		
+		<input type="submit" value="전송">
+		<input type="reset" value="초기화">
+		
+	</form>
+
+
+</body>
+</html>

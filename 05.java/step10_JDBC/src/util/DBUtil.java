@@ -20,7 +20,8 @@ public class DBUtil {
 	// 2단계 : DB 연결 가능 메소드
 	
 	public static Connection getConnection() throws SQLException{
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/scott?serverTimezone=Asia/Seoul", "scott", "tiger");
+		return DriverManager.getConnection("jdbc:mysql://movie-mysql.cewlbsimfbye.ap-northeast-1.rds.amazonaws.com:3306/scott", "root", "root1234");
+//		return DriverManager.getConnection("jdbc:mysql://movie-mysql.cewlbsimfbye.ap-northeast-1.rds.amazonaws.com", "root", "root1234");
 	}
 	
 	// 6단계 : 자원 반환 메소드
