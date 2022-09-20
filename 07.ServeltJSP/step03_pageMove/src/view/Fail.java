@@ -19,10 +19,15 @@ public class Fail extends HttpServlet {
 		String id = request.getParameter("id");
 		PrintWriter out = response.getWriter();
 		out.println("회원가입 실패 동일한  ID: " + id + "존재");
-	
-	
-	
-	
 	}
+	
+	
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		response.setContentType("text/html;charset=UTF-8");
+//		String id = request.getParameter("id");
+//		PrintWriter out = response.getWriter();
+//		out.println("회원가입 실패 동일한  ID: " + id + "존재");
+//	}
+
 
 }

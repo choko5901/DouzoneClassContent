@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>step03_pageMove</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+   <servlet>
+  	<servlet-name>IdCheck</servlet-name>
+  	<servlet-class>controller.IdCheck</servlet-class>
+  	<init-param>
+  		<param-name>testParameter</param-name>
+  		<param-value>testValue</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>charset</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+</web-app>

@@ -21,12 +21,6 @@ public class Success extends HttpServlet {
 		System.out.println(serverKey);
 		PrintWriter out = response.getWriter();
 		out.println("회원가입 성공 : " + id);
-
-	
-	
-	
-	
-	
-	}
+}
 
 }
