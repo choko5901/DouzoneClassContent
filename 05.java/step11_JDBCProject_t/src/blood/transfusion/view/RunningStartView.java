@@ -13,7 +13,7 @@ public class RunningStartView {
 		
 		// 특정 프로젝트 검색 (무엇으로 검색할지)
 //		System.out.println("=====특정 프로젝트 검색=====");
-//		controller.SearchBTprojects("");
+		controller.SearchBTprojects("");
 //		
 		
 		// 프로젝트 입력(필수적으로 들어가야 하는 데이터는 무엇인지? -NOT NULL / Default....)									.
